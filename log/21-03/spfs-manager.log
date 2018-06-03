@@ -1,0 +1,33 @@
+Wed Mar 21 2018 16:49:23.348311  spfs-manager(1548): INFO   : Log file initialized. Verbosity level: 4
+Wed Mar 21 2018 16:49:23.348362  spfs-manager(1548): DEBUG  : creating SOCK_SEQPACKET socket: ./control.sock
+Wed Mar 21 2018 16:49:23.348420  spfs-manager(1548): DEBUG  : Socket was moved to fd: 4
+Wed Mar 21 2018 16:49:23.348526  spfs-manager(1548): INFO   : listening to ./control.sock
+Wed Mar 21 2018 16:49:23.349035  spfs-manager(1549): INFO   : unreliable_socket_loop: socket loop started
+Wed Mar 21 2018 16:49:23.349121  spfs-manager(1549): DEBUG  : unreliable_socket_loop: accepted new socket
+Wed Mar 21 2018 16:49:23.349134  spfs-manager(1549): DEBUG  : received 168 bytes
+Wed Mar 21 2018 16:49:23.349146  spfs-manager(1549): DEBUG  : received request: "switch"
+Wed Mar 21 2018 16:49:23.349179  spfs-manager(1549): DEBUG  :     options: source=/root/projects/switcher/test/A1/double-test;target=/root/projects/switcher/test/B1/double-test;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Wed Mar 21 2018 16:49:23.349484  spfs-manager(1550): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Wed Mar 21 2018 16:49:23.449799  spfs-manager(1550): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Wed Mar 21 2018 16:49:23.450664  spfs-manager(1551): DEBUG  : Pids list:
+1543
+
+Wed Mar 21 2018 16:49:23.450817  spfs-manager(1551): DEBUG  : Collecting processes...
+Wed Mar 21 2018 16:49:23.451072  spfs-manager(1551): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Wed Mar 21 2018 16:49:23.451093  spfs-manager(1551): DEBUG  : Seizing processes...
+Wed Mar 21 2018 16:49:23.451344  spfs-manager(1551): INFO   :     1543 seized
+Wed Mar 21 2018 16:49:23.451386  spfs-manager(1551): DEBUG  : Collecting sockets:
+Wed Mar 21 2018 16:49:23.451932  spfs-manager(1551): DEBUG  : Process 1543: examining...
+Wed Mar 21 2018 16:49:23.452036  spfs-manager(1551): DEBUG  :     Using mapping: 00400000-00401000 r-xp 00000000 fd:00 50351159                           /usr/bin/python2.7
+Wed Mar 21 2018 16:49:23.452089  spfs-manager(1551): WARNING:     Process 1543 will restart system call
+Wed Mar 21 2018 16:49:23.452592  spfs-manager(1551): DEBUG  :         Set remote sock SWAPFD-remote-1543-0
+Wed Mar 21 2018 16:49:23.452850  spfs-manager(1551): DEBUG  :     /proc/1543/cwd ---> /root/projects/switcher/test/B1/double-test
+Wed Mar 21 2018 16:49:23.455117  spfs-manager(1551): DEBUG  : Swapping resources:
+Wed Mar 21 2018 16:49:23.455154  spfs-manager(1551): INFO   : Swapping process 1543 resources:
+Wed Mar 21 2018 16:49:23.455217  spfs-manager(1551): DEBUG  :     /proc/1551/fd/14 --> /proc/1543/cwd
+Wed Mar 21 2018 16:49:23.455464  spfs-manager(1551): INFO   :     1543 released
+Wed Mar 21 2018 16:49:23.455754  spfs-manager(1550): DEBUG  : child 1551 exited successfully
+Wed Mar 21 2018 16:49:23.455839  spfs-manager(1550): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Wed Mar 21 2018 16:49:23.455857  spfs-manager(1550): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(1549): DEBUG  : 1550 exited, status=0
+Wed Mar 21 2018 16:49:23.466256  spfs-manager(1549): DEBUG  : unreliable_conn_handler: peer was closed

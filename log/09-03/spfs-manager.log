@@ -1,0 +1,50 @@
+Fri Mar  9 2018 11:59:21.416860  spfs-manager(1350): INFO   : Log file initialized. Verbosity level: 4
+Fri Mar  9 2018 11:59:21.416891  spfs-manager(1350): DEBUG  : creating SOCK_SEQPACKET socket: ./control.sock
+Fri Mar  9 2018 11:59:21.416935  spfs-manager(1350): DEBUG  : Socket was moved to fd: 4
+Fri Mar  9 2018 11:59:21.417229  spfs-manager(1350): INFO   : listening to ./control.sock
+Fri Mar  9 2018 11:59:21.417540  spfs-manager(1351): INFO   : unreliable_socket_loop: socket loop started
+Fri Mar  9 2018 11:59:21.417971  spfs-manager(1351): DEBUG  : unreliable_socket_loop: accepted new socket
+Fri Mar  9 2018 11:59:21.417999  spfs-manager(1351): DEBUG  : received 144 bytes
+Fri Mar  9 2018 11:59:21.418015  spfs-manager(1351): DEBUG  : received request: "switch"
+Fri Mar  9 2018 11:59:21.418023  spfs-manager(1351): DEBUG  :     options: source=/root/projects/switcher/test/A1;target=/root/projects/switcher/test/B1;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Fri Mar  9 2018 11:59:21.419471  spfs-manager(1352): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Fri Mar  9 2018 11:59:21.519734  spfs-manager(1352): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Fri Mar  9 2018 11:59:21.520369  spfs-manager(1353): DEBUG  : Pids list:
+1347
+
+Fri Mar  9 2018 11:59:21.520470  spfs-manager(1353): DEBUG  : Collecting processes...
+Fri Mar  9 2018 11:59:21.520630  spfs-manager(1353): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Fri Mar  9 2018 11:59:21.520646  spfs-manager(1353): DEBUG  : Seizing processes...
+Fri Mar  9 2018 11:59:21.520930  spfs-manager(1353): INFO   :     1347 seized
+Fri Mar  9 2018 11:59:21.520968  spfs-manager(1353): DEBUG  : Collecting sockets:
+Fri Mar  9 2018 11:59:21.554076  spfs-manager(1353): DEBUG  : Process 1347: examining...
+Fri Mar  9 2018 11:59:21.557064  spfs-manager(1353): DEBUG  :     Using mapping: 00400000-00401000 r-xp 00000000 00:25 25202                              /root/projects/switcher/test/A1/test
+Fri Mar  9 2018 11:59:21.557148  spfs-manager(1353): WARNING:     Process 1347 will restart system call
+Fri Mar  9 2018 11:59:21.558973  spfs-manager(1353): DEBUG  :         Set remote sock SWAPFD-remote-1347-0
+Fri Mar  9 2018 11:59:21.559143  spfs-manager(1353): DEBUG  :     /proc/1347/cwd ---> /root/projects/switcher/test/B1
+Fri Mar  9 2018 11:59:21.559215  spfs-manager(1353): DEBUG  :     /proc/1347/exe ---> /root/projects/switcher/test/B1/test
+Fri Mar  9 2018 11:59:21.559293  spfs-manager(1353): DEBUG  :     /proc/1347/map_files/400000-401000 ---> /root/projects/switcher/test/B1/test (flags: 00)
+Fri Mar  9 2018 11:59:21.559334  spfs-manager(1353): DEBUG  :     /proc/1347/map_files/600000-601000 ---> /root/projects/switcher/test/B1/test (flags: 00)
+Fri Mar  9 2018 11:59:21.559373  spfs-manager(1353): DEBUG  :     /proc/1347/map_files/601000-602000 ---> /root/projects/switcher/test/B1/test (flags: 00)
+Fri Mar  9 2018 11:59:21.559600  spfs-manager(1353): DEBUG  : Swapping resources:
+Fri Mar  9 2018 11:59:21.559609  spfs-manager(1353): INFO   : Swapping process 1347 resources:
+Fri Mar  9 2018 11:59:21.559622  spfs-manager(1353): DEBUG  :     /proc/1353/fd/14 --> /proc/1347/map_files/400000-401000
+Fri Mar  9 2018 11:59:21.559670  spfs-manager(1353): DEBUG  :         mmap to replace 400000-401000, prot=5, flags=2, off=0
+Fri Mar  9 2018 11:59:21.559714  spfs-manager(1353): DEBUG  :             copy 0x400000-0x401000 to 0x7fc32e1b0000-0x7fc32e1b1000 (PME_PRESENT)
+Fri Mar  9 2018 11:59:21.559755  spfs-manager(1353): DEBUG  :         remapping 7fc32e1b0000 to 400000, size=1000
+Fri Mar  9 2018 11:59:21.559808  spfs-manager(1353): DEBUG  :     /proc/1353/fd/14 --> /proc/1347/map_files/600000-601000
+Fri Mar  9 2018 11:59:21.559883  spfs-manager(1353): DEBUG  :         mmap to replace 600000-601000, prot=1, flags=2, off=0
+Fri Mar  9 2018 11:59:21.559924  spfs-manager(1353): DEBUG  :             copy 0x600000-0x601000 to 0x7fc32e1b0000-0x7fc32e1b1000 (PME_PRESENT)
+Fri Mar  9 2018 11:59:21.559948  spfs-manager(1353): DEBUG  :         remapping 7fc32e1b0000 to 600000, size=1000
+Fri Mar  9 2018 11:59:21.560001  spfs-manager(1353): DEBUG  :     /proc/1353/fd/14 --> /proc/1347/map_files/601000-602000
+Fri Mar  9 2018 11:59:21.560039  spfs-manager(1353): DEBUG  :         mmap to replace 601000-602000, prot=3, flags=2, off=1000
+Fri Mar  9 2018 11:59:21.560071  spfs-manager(1353): DEBUG  :             copy 0x601000-0x602000 to 0x7fc32e1b0000-0x7fc32e1b1000 (PME_PRESENT)
+Fri Mar  9 2018 11:59:21.560100  spfs-manager(1353): DEBUG  :         remapping 7fc32e1b0000 to 601000, size=1000
+Fri Mar  9 2018 11:59:21.560150  spfs-manager(1353): DEBUG  :     /proc/1353/fd/15 --> /proc/1347/cwd
+Fri Mar  9 2018 11:59:21.560197  spfs-manager(1353): DEBUG  :     /proc/1353/fd/14 --> /proc/1347/exe
+Fri Mar  9 2018 11:59:21.560308  spfs-manager(1353): INFO   :     1347 released
+Fri Mar  9 2018 11:59:21.560457  spfs-manager(1352): DEBUG  : child 1353 exited successfully
+Fri Mar  9 2018 11:59:21.560521  spfs-manager(1352): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Fri Mar  9 2018 11:59:21.560529  spfs-manager(1352): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(1351): DEBUG  : 1352 exited, status=0
+Fri Mar  9 2018 11:59:21.563896  spfs-manager(1351): DEBUG  : unreliable_conn_handler: peer was closed

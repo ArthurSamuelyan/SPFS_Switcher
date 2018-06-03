@@ -1,0 +1,86 @@
+Tue Mar 27 2018 18:29:47.937174  spfs-manager(1737): INFO   : Log file initialized. Verbosity level: 4
+Tue Mar 27 2018 18:29:47.937197  spfs-manager(1737): DEBUG  : creating SOCK_SEQPACKET socket: control.sock
+Tue Mar 27 2018 18:29:47.937240  spfs-manager(1737): DEBUG  : Socket was moved to fd: 4
+Tue Mar 27 2018 18:29:47.937310  spfs-manager(1737): INFO   : listening to control.sock
+Tue Mar 27 2018 18:29:47.938172  spfs-manager(1738): INFO   : unreliable_socket_loop: socket loop started
+Tue Mar 27 2018 18:29:47.938283  spfs-manager(1738): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Mar 27 2018 18:29:47.938307  spfs-manager(1738): DEBUG  : received 118 bytes
+Tue Mar 27 2018 18:29:47.938325  spfs-manager(1738): DEBUG  : received request: "mount"
+Tue Mar 27 2018 18:29:47.938338  spfs-manager(1738): DEBUG  :     options: mountpoint=/root/projects/switcher/work-dir/spfs-mnt;mode=proxy;proxy_dir=/root/projects/switcher/test/A1;id=0;
+Tue Mar 27 2018 18:29:47.938435  spfs-manager(1738): DEBUG  : added mount path /root/projects/switcher/work-dir/spfs-mnt to spfs info 0
+Tue Mar 27 2018 18:29:47.938848  spfs-manager(1739): INFO   : Executing: spfs -vv -f --single-user -o no_remote_lock -o nonempty -o intr --mode proxy --socket-path /root/projects/switcher/work-dir/spfs-0.sock --ready-fd 12 --log log-dir/spfs-0.log /root/projects/switcher/work-dir/spfs-mnt --proxy-dir /root/projects/switcher/test/A1 
+spfs-manager(1738): DEBUG  : 1739 exited, status=255
+Tue Mar 27 2018 18:29:47.942482  spfs-manager(1738): ERR    : Wait for 1739 failed: No child processes
+Tue Mar 27 2018 18:29:47.942506  spfs-manager(1738): ERR    : 1739 exited unexpectedly
+Tue Mar 27 2018 18:29:47.942530  spfs-manager(1738): ERR    : failed to unmount spfs 0 (/root/projects/switcher/work-dir/spfs-mnt): Device or resource busy
+Tue Mar 27 2018 18:29:47.942549  spfs-manager(1738): ERR    : failed to mount spfs to /root/projects/switcher/work-dir/spfs-mnt
+Tue Mar 27 2018 18:29:47.988958  spfs-manager(1738): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Mar 27 2018 18:29:47.989005  spfs-manager(1738): DEBUG  : received 154 bytes
+Tue Mar 27 2018 18:29:47.989013  spfs-manager(1738): DEBUG  : received request: "switch"
+Tue Mar 27 2018 18:29:47.989019  spfs-manager(1738): DEBUG  :     options: source=/root/projects/switcher/test/A1;target=/root/projects/switcher/work-dir/spfs-mnt;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Tue Mar 27 2018 18:29:47.989414  spfs-manager(1743): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Tue Mar 27 2018 18:29:48.089664  spfs-manager(1743): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Tue Mar 27 2018 18:29:48.090101  spfs-manager(1744): DEBUG  : Pids list:
+1735
+
+Tue Mar 27 2018 18:29:48.090201  spfs-manager(1744): DEBUG  : Collecting processes...
+Tue Mar 27 2018 18:29:48.090361  spfs-manager(1744): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Mar 27 2018 18:29:48.090424  spfs-manager(1744): DEBUG  : Seizing processes...
+Tue Mar 27 2018 18:29:48.090610  spfs-manager(1744): INFO   :     1735 seized
+Tue Mar 27 2018 18:29:48.090633  spfs-manager(1744): DEBUG  : Collecting sockets:
+Tue Mar 27 2018 18:29:48.091009  spfs-manager(1744): DEBUG  : Process 1735: examining...
+Tue Mar 27 2018 18:29:48.091097  spfs-manager(1744): DEBUG  :     Using mapping: 00400000-00401000 r-xp 00000000 fd:00 50351159                           /usr/bin/python2.7
+Tue Mar 27 2018 18:29:48.091143  spfs-manager(1744): WARNING:     Process 1735 will restart system call
+Tue Mar 27 2018 18:29:48.091487  spfs-manager(1744): DEBUG  :         Set remote sock SWAPFD-remote-1735-0
+Tue Mar 27 2018 18:29:48.091689  spfs-manager(1744): DEBUG  :     /proc/1735/cwd ---> /root/projects/switcher/work-dir/spfs-mnt
+Tue Mar 27 2018 18:29:48.093447  spfs-manager(1744): DEBUG  : Swapping resources:
+Tue Mar 27 2018 18:29:48.093473  spfs-manager(1744): INFO   : Swapping process 1735 resources:
+Tue Mar 27 2018 18:29:48.093614  spfs-manager(1744): DEBUG  :     /proc/1744/fd/14 --> /proc/1735/cwd
+Tue Mar 27 2018 18:29:48.094062  spfs-manager(1744): INFO   :     1735 released
+Tue Mar 27 2018 18:29:48.094250  spfs-manager(1743): DEBUG  : child 1744 exited successfully
+Tue Mar 27 2018 18:29:48.094310  spfs-manager(1743): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Mar 27 2018 18:29:48.094324  spfs-manager(1743): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(1738): DEBUG  : 1743 exited, status=0
+Tue Mar 27 2018 18:29:48.094790  spfs-manager(1738): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Mar 27 2018 18:29:48.094828  spfs-manager(1738): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Mar 27 2018 18:29:48.094846  spfs-manager(1738): DEBUG  : received 21 bytes
+Tue Mar 27 2018 18:29:48.094857  spfs-manager(1738): DEBUG  : received request: "mode"
+Tue Mar 27 2018 18:29:48.094868  spfs-manager(1738): DEBUG  :     options: id=0;mode=stub;
+Tue Mar 27 2018 18:29:48.095612  spfs-manager(1745): ERR    : failed to find spfs info with id 0
+spfs-manager(1738): DEBUG  : 1745 exited, status=234
+Tue Mar 27 2018 18:29:48.096210  spfs-manager(1738): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Mar 27 2018 18:29:48.141062  spfs-manager(1738): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Mar 27 2018 18:29:48.141109  spfs-manager(1738): DEBUG  : received 64 bytes
+Tue Mar 27 2018 18:29:48.141117  spfs-manager(1738): DEBUG  : received request: "mode"
+Tue Mar 27 2018 18:29:48.141123  spfs-manager(1738): DEBUG  :     options: mode=proxy;proxy_dir=/root/projects/switcher/test/B1;id=0;
+Tue Mar 27 2018 18:29:48.141278  spfs-manager(1749): ERR    : failed to find spfs info with id 0
+spfs-manager(1738): DEBUG  : 1749 exited, status=234
+Tue Mar 27 2018 18:29:48.141528  spfs-manager(1738): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Mar 27 2018 18:29:48.141548  spfs-manager(1738): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Mar 27 2018 18:29:48.141556  spfs-manager(1738): DEBUG  : received 154 bytes
+Tue Mar 27 2018 18:29:48.141562  spfs-manager(1738): DEBUG  : received request: "switch"
+Tue Mar 27 2018 18:29:48.141568  spfs-manager(1738): DEBUG  :     options: source=/root/projects/switcher/work-dir/spfs-mnt;target=/root/projects/switcher/test/B1;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Tue Mar 27 2018 18:29:48.142161  spfs-manager(1750): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Tue Mar 27 2018 18:29:48.242343  spfs-manager(1750): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Tue Mar 27 2018 18:29:48.242640  spfs-manager(1751): DEBUG  : Pids list:
+1735
+
+Tue Mar 27 2018 18:29:48.242700  spfs-manager(1751): DEBUG  : Collecting processes...
+Tue Mar 27 2018 18:29:48.242794  spfs-manager(1751): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Mar 27 2018 18:29:48.242804  spfs-manager(1751): DEBUG  : Seizing processes...
+Tue Mar 27 2018 18:29:48.242909  spfs-manager(1751): INFO   :     1735 seized
+Tue Mar 27 2018 18:29:48.242922  spfs-manager(1751): DEBUG  : Collecting sockets:
+Tue Mar 27 2018 18:29:48.243167  spfs-manager(1751): DEBUG  : Process 1735: examining...
+Tue Mar 27 2018 18:29:48.243219  spfs-manager(1751): DEBUG  :     Using mapping: 00400000-00401000 r-xp 00000000 fd:00 50351159                           /usr/bin/python2.7
+Tue Mar 27 2018 18:29:48.243244  spfs-manager(1751): WARNING:     Process 1735 will restart system call
+Tue Mar 27 2018 18:29:48.243439  spfs-manager(1751): DEBUG  :         Set remote sock SWAPFD-remote-1735-0
+Tue Mar 27 2018 18:29:48.243644  spfs-manager(1751): DEBUG  :     /proc/1735/cwd ---> /root/projects/switcher/test/B1
+Tue Mar 27 2018 18:29:48.244681  spfs-manager(1751): DEBUG  : Swapping resources:
+Tue Mar 27 2018 18:29:48.244698  spfs-manager(1751): INFO   : Swapping process 1735 resources:
+Tue Mar 27 2018 18:29:48.244710  spfs-manager(1751): DEBUG  :     /proc/1751/fd/14 --> /proc/1735/cwd
+Tue Mar 27 2018 18:29:48.244853  spfs-manager(1751): INFO   :     1735 released
+Tue Mar 27 2018 18:29:48.244962  spfs-manager(1750): DEBUG  : child 1751 exited successfully
+Tue Mar 27 2018 18:29:48.245005  spfs-manager(1750): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Mar 27 2018 18:29:48.245014  spfs-manager(1750): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(1738): DEBUG  : 1750 exited, status=0
+Tue Mar 27 2018 18:29:48.250630  spfs-manager(1738): DEBUG  : unreliable_conn_handler: peer was closed

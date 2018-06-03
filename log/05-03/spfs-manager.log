@@ -1,0 +1,31 @@
+Sun Mar  4 2018 15:04:40.737842  spfs-manager(3751): INFO   : Log file initialized. Verbosity level: 4
+Sun Mar  4 2018 15:04:40.737869  spfs-manager(3751): DEBUG  : creating SOCK_SEQPACKET socket: ./control.sock
+Sun Mar  4 2018 15:04:40.737947  spfs-manager(3751): DEBUG  : Socket was moved to fd: 4
+Sun Mar  4 2018 15:04:40.738281  spfs-manager(3751): INFO   : listening to ./control.sock
+Sun Mar  4 2018 15:04:40.738718  spfs-manager(3752): INFO   : unreliable_socket_loop: socket loop started
+Sun Mar  4 2018 15:04:40.739337  spfs-manager(3752): DEBUG  : unreliable_socket_loop: accepted new socket
+Sun Mar  4 2018 15:04:40.739395  spfs-manager(3752): DEBUG  : received 142 bytes
+Sun Mar  4 2018 15:04:40.739435  spfs-manager(3752): DEBUG  : received request: "switch"
+Sun Mar  4 2018 15:04:40.739452  spfs-manager(3752): DEBUG  :     options: source=/root/projects/switcher/test/A;target=/root/projects/switcher/test/B;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Sun Mar  4 2018 15:04:40.741200  spfs-manager(3753): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Sun Mar  4 2018 15:04:40.841534  spfs-manager(3753): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Sun Mar  4 2018 15:04:40.842071  spfs-manager(3754): DEBUG  : Pids list:
+3749
+
+Sun Mar  4 2018 15:04:40.842303  spfs-manager(3754): DEBUG  : Collecting processes...
+Sun Mar  4 2018 15:04:40.842573  spfs-manager(3754): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Sun Mar  4 2018 15:04:40.842601  spfs-manager(3754): DEBUG  : Seizing processes...
+Sun Mar  4 2018 15:04:40.842975  spfs-manager(3754): INFO   :     3749 seized
+Sun Mar  4 2018 15:04:40.843033  spfs-manager(3754): DEBUG  : Collecting sockets:
+Sun Mar  4 2018 15:04:40.875669  spfs-manager(3754): DEBUG  : Process 3749: examining...
+Sun Mar  4 2018 15:04:40.875951  spfs-manager(3754): DEBUG  :     Using mapping: 00400000-00401000 r-xp 00000000 fd:00 33608009                           /root/projects/switcher/test/A/test
+Sun Mar  4 2018 15:04:40.876024  spfs-manager(3754): WARNING:     Process 3749 will restart system call
+Sun Mar  4 2018 15:04:40.880148  spfs-manager(3754): DEBUG  :         Set remote sock SWAPFD-remote-3749-0
+Sun Mar  4 2018 15:04:40.880360  spfs-manager(3754): DEBUG  :     /proc/3749/cwd ---> /root/projects/switcher/test/B
+Sun Mar  4 2018 15:04:40.880388  spfs-manager(3754): ERR    : link / doesn't start with source mnt /root/projects/switcher/test/A
+Sun Mar  4 2018 15:04:40.880475  spfs-manager(3754): INFO   :     3749 released
+Sun Mar  4 2018 15:04:40.880649  spfs-manager(3753): ERR    : child 3754 exited with error 234
+Sun Mar  4 2018 15:04:40.880710  spfs-manager(3753): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Sun Mar  4 2018 15:04:40.880723  spfs-manager(3753): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(3752): DEBUG  : 3753 exited, status=234
+Sun Mar  4 2018 15:04:40.884594  spfs-manager(3752): DEBUG  : unreliable_conn_handler: peer was closed
