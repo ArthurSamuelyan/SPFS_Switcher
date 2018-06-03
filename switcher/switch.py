@@ -60,61 +60,69 @@ def FindMountPoint( abs_path ):
     return abs_path
 
 def main():
-    # preparing:
-
+    # ===Preparation:==================================================================================
+    # ===Parse command line arguments:
     parser = CreateParser()
     arguments = parser.parse_args( sys.argv[1:] )
     if( ( not os.path.isdir( arguments.src ) ) or ( not os.path.isdir( arguments.dst ) ) ):
         print( "Error: --src and --dst values must be directories!" )
         return
  
-    print( arguments )
+    print( arguments ) # debug
 
+    # ===We'll need two cgroups: spfs_switcher_active and spfs_switcher_retired
+    # ===We'll give spfs_switcher_active controls to spfs-manager and it may freeze or unfreeze this cgroup
+    # ===Because the only way to delete the process from a cgroup is to put it into another cgroup,
+    # ===we'll create spfs_switcher_retired. This cgroup shall never be freezed. We'll put there processes from
+    # ===spfs_switcher_active after unfreezing them via spfs-manager
     freezer_name_a = "spfs_switcher_active"
     freezer_name_r = "spfs_switcher_retired" 
-
     abs_src = os.path.abspath( arguments.src )
     abs_dst = os.path.abspath( arguments.dst )
-
+    
+    # ===Checking mount points. spfs-manager needs src and dst directories to be on different mount points.
     mnt_src = FindMountPoint( abs_src )
     mnt_dst = FindMountPoint( abs_dst )
-    
-
     if( mnt_src == mnt_dst ):
         print( "Error: --src and --dst directories must be on different mount points!" )
         return
 
-    # preparing complete.
+    # ===Launching and preparing spfs-manager:
+    mngr = manager.Manager( "./control.sock" )    # Shall we allow user to specify control socket location?
 
-
-    mngr = manager.Manager( "./control.sock" )
-
-    mnt_spfs = mngr.work_dir_path + "/spfs-mnt"
+    mnt_spfs = mngr.work_dir_path + "/spfs-mnt"   # Shall we allow user to specify mnt directory?
     try:
         os.mkdir( mnt_spfs, 0755 )
     except OSError:
         print( mnt_spfs + " already exists." )
+
     mnt_spfs = os.path.abspath( mnt_spfs )
 
+    # ===Mounting spfs into mnt_spfs on src directory:
     mngr.mount( id=0, mountpoint=mnt_spfs, mode="proxy", proxy_dir=abs_src )
+    # ===Creating spfs_switcher_active freezer cgroup and filling with given processes: 
     PutProcessesIntoFreezer( arguments.pid, freezer_name_a )
-
+    # ===Preliminary data syncing between src and dst (in order to speed up main data syncing): 
     RsyncCall( abs_src, abs_dst )
+    # ===Preparation complete.=========================================================================
 
+    # ===Switch:=======================================================================================
+    # ===1: Switching processes src -> mnt_spfs:
     mngr.switch( source=abs_src, target=mnt_spfs, freeze_cgroup=FreezerPath( freezer_name_a ) )
 
+    # ===2: Synchronize data:
+    # ===   Freezing processes in cgroup:
     mngr.set_mode( id=0, mode="stub" )
-
-    # now program is freezed:
-
+    # ===   Main data syncing:
     RsyncCall( abs_src, abs_dst )
-
+    # ===   Unfreezing processes back:
     mngr.set_mode( id=0, mode="proxy", proxy_dir=abs_dst )
 
+    # ===3: Switching processes mnt_spfs -> dst:
     mngr.switch( source=mnt_spfs, target=abs_dst, freeze_cgroup=FreezerPath( freezer_name_a ) )
+    # ===Switch complete.==============================================================================
 
-    # now it is released:   
-
+    # Cleaning spfs_switcher_active freezer:
     PutProcessesIntoFreezer( ParseTasks( freezer_name_a ), freezer_name_r )
 
 
