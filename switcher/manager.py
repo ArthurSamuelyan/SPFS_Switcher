@@ -1,6 +1,7 @@
 import ctypes
 import socket
 import os
+import shutil
 
 class Manager:
     """Manager implements spfs-manager interface"""
@@ -17,6 +18,11 @@ class Manager:
         self.socket_file = "control.sock"
 
         self.namespaces = ["pid"]        # Do we need it?
+
+	try:
+	    shutil.rmtree( self.work_dir_path )
+        except shutil.Error:
+            print "Work directory has not been removed."
 
         try:
             os.mkdir( self.work_dir_path, 0755 )
