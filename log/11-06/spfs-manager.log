@@ -1,0 +1,473 @@
+Tue Jun 12 2018 00:49:01.233012  spfs-manager(32495): INFO   : Log file initialized. Verbosity level: 4
+Tue Jun 12 2018 00:49:01.233058  spfs-manager(32495): DEBUG  : creating SOCK_SEQPACKET socket: control.sock
+Tue Jun 12 2018 00:49:01.233095  spfs-manager(32495): DEBUG  : Socket was moved to fd: 4
+Tue Jun 12 2018 00:49:01.233169  spfs-manager(32495): INFO   : listening to control.sock
+Tue Jun 12 2018 00:49:01.234743  spfs-manager(32496): INFO   : unreliable_socket_loop: socket loop started
+Tue Jun 12 2018 00:49:01.235119  spfs-manager(32496): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Jun 12 2018 00:49:01.235182  spfs-manager(32496): DEBUG  : received 94 bytes
+Tue Jun 12 2018 00:49:01.235236  spfs-manager(32496): DEBUG  : received request: "mount"
+Tue Jun 12 2018 00:49:01.235265  spfs-manager(32496): DEBUG  :     options: mountpoint=/root/work-dir/spfs-mnt;mode=proxy;proxy_dir=/root/Quake3/quake3-test1;id=0;
+Tue Jun 12 2018 00:49:01.235480  spfs-manager(32496): DEBUG  : added mount path /root/work-dir/spfs-mnt to spfs info 0
+Tue Jun 12 2018 00:49:01.235987  spfs-manager(32497): INFO   : Executing: spfs -vv -f --single-user -o no_remote_lock -o nonempty -o intr --mode proxy --socket-path /root/work-dir/manager-work-dir/spfs-0.sock --ready-fd 12 --log log-dir/spfs-0.log /root/work-dir/spfs-mnt --proxy-dir /root/Quake3/quake3-test1 
+Tue Jun 12 2018 00:49:01.243134  spfs-manager(32496): INFO   : mount_spfs: spfs on /root/work-dir/spfs-mnt with pid 32497 started successfully
+Tue Jun 12 2018 00:49:01.243191  spfs-manager(32496): DEBUG  : creating SOCK_SEQPACKET socket: spfs-0.sock
+Tue Jun 12 2018 00:49:01.243218  spfs-manager(32496): DEBUG  : Socket was moved to fd: 11
+Tue Jun 12 2018 00:49:01.243245  spfs-manager(32496): INFO   : connected to spfs-0.sock
+Tue Jun 12 2018 00:49:01.243742  spfs-manager(32496): INFO   : added info with id 0
+Tue Jun 12 2018 00:49:01.245445  spfs-manager(32496): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Jun 12 2018 00:50:05.311391  spfs-manager(32496): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Jun 12 2018 00:50:05.311484  spfs-manager(32496): DEBUG  : received 130 bytes
+Tue Jun 12 2018 00:50:05.311508  spfs-manager(32496): DEBUG  : received request: "switch"
+Tue Jun 12 2018 00:50:05.311527  spfs-manager(32496): DEBUG  :     options: source=/root/Quake3/quake3-test1;target=/root/work-dir/spfs-mnt;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Tue Jun 12 2018 00:50:05.346533  spfs-manager(32510): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Tue Jun 12 2018 00:50:05.346650  spfs-manager(32510): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Tue Jun 12 2018 00:50:05.347000  spfs-manager(32511): DEBUG  : Pids list:
+32475
+
+Tue Jun 12 2018 00:50:05.347125  spfs-manager(32511): DEBUG  : Collecting processes...
+Tue Jun 12 2018 00:50:05.347243  spfs-manager(32511): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Jun 12 2018 00:50:05.347265  spfs-manager(32511): DEBUG  : Seizing processes...
+Tue Jun 12 2018 00:50:05.347474  spfs-manager(32511): INFO   :     32475 seized
+Tue Jun 12 2018 00:50:05.347504  spfs-manager(32511): DEBUG  : Collecting sockets:
+Tue Jun 12 2018 00:50:05.347937  spfs-manager(32511): DEBUG  : Process 32475: examining...
+Tue Jun 12 2018 00:50:05.348056  spfs-manager(32511): DEBUG  :     Using mapping: 00400000-004d4000 r-xp 00000000 00:35 143047                             /root/Quake3/quake3-test1/ioq3ded.x86_64
+Tue Jun 12 2018 00:50:05.348108  spfs-manager(32511): WARNING:     Process 32475 will restart system call
+Tue Jun 12 2018 00:50:05.348385  spfs-manager(32511): DEBUG  :         Set remote sock SWAPFD-remote-32475-0
+Tue Jun 12 2018 00:50:05.348519  spfs-manager(32511): DEBUG  :     /proc/32475/cwd ---> /root/work-dir/spfs-mnt
+Tue Jun 12 2018 00:50:05.348659  spfs-manager(32511): DEBUG  :     /proc/32475/fd/3 ---> /root/work-dir/spfs-mnt/baseq3/pak0.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.348748  spfs-manager(32511): DEBUG  :     /proc/32475/fd/4 ---> /root/work-dir/spfs-mnt/baseq3/pak1.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.348845  spfs-manager(32511): DEBUG  :     /proc/32475/fd/5 ---> /root/work-dir/spfs-mnt/baseq3/pak2.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.348941  spfs-manager(32511): DEBUG  :     /proc/32475/fd/6 ---> /root/work-dir/spfs-mnt/baseq3/pak3.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349052  spfs-manager(32511): DEBUG  :     /proc/32475/fd/7 ---> /root/work-dir/spfs-mnt/baseq3/pak4.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349138  spfs-manager(32511): DEBUG  :     /proc/32475/fd/8 ---> /root/work-dir/spfs-mnt/baseq3/pak5.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349242  spfs-manager(32511): DEBUG  :     /proc/32475/fd/9 ---> /root/work-dir/spfs-mnt/baseq3/pak6.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349327  spfs-manager(32511): DEBUG  :     /proc/32475/fd/10 ---> /root/work-dir/spfs-mnt/baseq3/pak7.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349477  spfs-manager(32511): DEBUG  :     /proc/32475/fd/11 ---> /root/work-dir/spfs-mnt/baseq3/pak8.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.349614  spfs-manager(32511): DEBUG  :     /proc/32475/exe ---> /root/work-dir/spfs-mnt/ioq3ded.x86_64
+Tue Jun 12 2018 00:50:05.349716  spfs-manager(32511): DEBUG  :     /proc/32475/map_files/400000-4d4000 ---> /root/work-dir/spfs-mnt/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.349771  spfs-manager(32511): DEBUG  :     /proc/32475/map_files/6d3000-6d4000 ---> /root/work-dir/spfs-mnt/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.349824  spfs-manager(32511): DEBUG  :     /proc/32475/map_files/6d4000-6d7000 ---> /root/work-dir/spfs-mnt/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.350551  spfs-manager(32511): DEBUG  : Swapping resources:
+Tue Jun 12 2018 00:50:05.350568  spfs-manager(32511): INFO   : Swapping process 32475 resources:
+Tue Jun 12 2018 00:50:05.350913  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/3 (29614080)
+Tue Jun 12 2018 00:50:05.351269  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/4 (374405)
+Tue Jun 12 2018 00:50:05.351648  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/5 (7511182)
+Tue Jun 12 2018 00:50:05.351982  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/6 (276305)
+Tue Jun 12 2018 00:50:05.352328  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/7 (9600350)
+Tue Jun 12 2018 00:50:05.352646  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/8 (191872)
+Tue Jun 12 2018 00:50:05.352904  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/9 (7346884)
+Tue Jun 12 2018 00:50:05.353182  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/10 (320873)
+Tue Jun 12 2018 00:50:05.353447  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/fd/11 (454478)
+Tue Jun 12 2018 00:50:05.353690  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/map_files/400000-4d4000
+Tue Jun 12 2018 00:50:05.353753  spfs-manager(32511): DEBUG  :         mmap to replace 400000-4d4000, prot=5, flags=2, off=0
+Tue Jun 12 2018 00:50:05.353837  spfs-manager(32511): DEBUG  :             copy 0x400000-0x401000 to 0x7f3dcf847000-0x7f3dcf848000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354104  spfs-manager(32511): DEBUG  :             copy 0x401000-0x402000 to 0x7f3dcf848000-0x7f3dcf849000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354138  spfs-manager(32511): DEBUG  :             copy 0x402000-0x403000 to 0x7f3dcf849000-0x7f3dcf84a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354163  spfs-manager(32511): DEBUG  :             copy 0x403000-0x404000 to 0x7f3dcf84a000-0x7f3dcf84b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354187  spfs-manager(32511): DEBUG  :             copy 0x404000-0x405000 to 0x7f3dcf84b000-0x7f3dcf84c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354211  spfs-manager(32511): DEBUG  :             copy 0x405000-0x406000 to 0x7f3dcf84c000-0x7f3dcf84d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354235  spfs-manager(32511): DEBUG  :             copy 0x406000-0x407000 to 0x7f3dcf84d000-0x7f3dcf84e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354268  spfs-manager(32511): DEBUG  :             copy 0x407000-0x408000 to 0x7f3dcf84e000-0x7f3dcf84f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354292  spfs-manager(32511): DEBUG  :             copy 0x408000-0x409000 to 0x7f3dcf84f000-0x7f3dcf850000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354316  spfs-manager(32511): DEBUG  :             copy 0x40a000-0x40b000 to 0x7f3dcf851000-0x7f3dcf852000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354341  spfs-manager(32511): DEBUG  :             copy 0x40b000-0x40c000 to 0x7f3dcf852000-0x7f3dcf853000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354385  spfs-manager(32511): DEBUG  :             copy 0x40c000-0x40d000 to 0x7f3dcf853000-0x7f3dcf854000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354412  spfs-manager(32511): DEBUG  :             copy 0x40d000-0x40e000 to 0x7f3dcf854000-0x7f3dcf855000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354437  spfs-manager(32511): DEBUG  :             copy 0x40e000-0x40f000 to 0x7f3dcf855000-0x7f3dcf856000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354461  spfs-manager(32511): DEBUG  :             copy 0x40f000-0x410000 to 0x7f3dcf856000-0x7f3dcf857000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354485  spfs-manager(32511): DEBUG  :             copy 0x410000-0x411000 to 0x7f3dcf857000-0x7f3dcf858000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354509  spfs-manager(32511): DEBUG  :             copy 0x411000-0x412000 to 0x7f3dcf858000-0x7f3dcf859000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354534  spfs-manager(32511): DEBUG  :             copy 0x412000-0x413000 to 0x7f3dcf859000-0x7f3dcf85a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354558  spfs-manager(32511): DEBUG  :             copy 0x413000-0x414000 to 0x7f3dcf85a000-0x7f3dcf85b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354582  spfs-manager(32511): DEBUG  :             copy 0x414000-0x415000 to 0x7f3dcf85b000-0x7f3dcf85c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354606  spfs-manager(32511): DEBUG  :             copy 0x415000-0x416000 to 0x7f3dcf85c000-0x7f3dcf85d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354630  spfs-manager(32511): DEBUG  :             copy 0x416000-0x417000 to 0x7f3dcf85d000-0x7f3dcf85e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354653  spfs-manager(32511): DEBUG  :             copy 0x417000-0x418000 to 0x7f3dcf85e000-0x7f3dcf85f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354677  spfs-manager(32511): DEBUG  :             copy 0x418000-0x419000 to 0x7f3dcf85f000-0x7f3dcf860000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354726  spfs-manager(32511): DEBUG  :             copy 0x419000-0x41a000 to 0x7f3dcf860000-0x7f3dcf861000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354751  spfs-manager(32511): DEBUG  :             copy 0x41a000-0x41b000 to 0x7f3dcf861000-0x7f3dcf862000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354775  spfs-manager(32511): DEBUG  :             copy 0x41b000-0x41c000 to 0x7f3dcf862000-0x7f3dcf863000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354798  spfs-manager(32511): DEBUG  :             copy 0x41c000-0x41d000 to 0x7f3dcf863000-0x7f3dcf864000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354822  spfs-manager(32511): DEBUG  :             copy 0x41d000-0x41e000 to 0x7f3dcf864000-0x7f3dcf865000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354845  spfs-manager(32511): DEBUG  :             copy 0x41e000-0x41f000 to 0x7f3dcf865000-0x7f3dcf866000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354887  spfs-manager(32511): DEBUG  :             copy 0x41f000-0x420000 to 0x7f3dcf866000-0x7f3dcf867000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.354922  spfs-manager(32511): DEBUG  :             copy 0x420000-0x421000 to 0x7f3dcf867000-0x7f3dcf868000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355268  spfs-manager(32511): DEBUG  :             copy 0x421000-0x422000 to 0x7f3dcf868000-0x7f3dcf869000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355300  spfs-manager(32511): DEBUG  :             copy 0x422000-0x423000 to 0x7f3dcf869000-0x7f3dcf86a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355324  spfs-manager(32511): DEBUG  :             copy 0x423000-0x424000 to 0x7f3dcf86a000-0x7f3dcf86b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355379  spfs-manager(32511): DEBUG  :             copy 0x424000-0x425000 to 0x7f3dcf86b000-0x7f3dcf86c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355409  spfs-manager(32511): DEBUG  :             copy 0x425000-0x426000 to 0x7f3dcf86c000-0x7f3dcf86d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355433  spfs-manager(32511): DEBUG  :             copy 0x426000-0x427000 to 0x7f3dcf86d000-0x7f3dcf86e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355457  spfs-manager(32511): DEBUG  :             copy 0x427000-0x428000 to 0x7f3dcf86e000-0x7f3dcf86f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355481  spfs-manager(32511): DEBUG  :             copy 0x428000-0x429000 to 0x7f3dcf86f000-0x7f3dcf870000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355505  spfs-manager(32511): DEBUG  :             copy 0x429000-0x42a000 to 0x7f3dcf870000-0x7f3dcf871000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355529  spfs-manager(32511): DEBUG  :             copy 0x42a000-0x42b000 to 0x7f3dcf871000-0x7f3dcf872000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355552  spfs-manager(32511): DEBUG  :             copy 0x42b000-0x42c000 to 0x7f3dcf872000-0x7f3dcf873000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355576  spfs-manager(32511): DEBUG  :             copy 0x42c000-0x42d000 to 0x7f3dcf873000-0x7f3dcf874000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355601  spfs-manager(32511): DEBUG  :             copy 0x42d000-0x42e000 to 0x7f3dcf874000-0x7f3dcf875000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355625  spfs-manager(32511): DEBUG  :             copy 0x42e000-0x42f000 to 0x7f3dcf875000-0x7f3dcf876000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355650  spfs-manager(32511): DEBUG  :             copy 0x42f000-0x430000 to 0x7f3dcf876000-0x7f3dcf877000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355674  spfs-manager(32511): DEBUG  :             copy 0x430000-0x431000 to 0x7f3dcf877000-0x7f3dcf878000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355698  spfs-manager(32511): DEBUG  :             copy 0x431000-0x432000 to 0x7f3dcf878000-0x7f3dcf879000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355721  spfs-manager(32511): DEBUG  :             copy 0x432000-0x433000 to 0x7f3dcf879000-0x7f3dcf87a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355745  spfs-manager(32511): DEBUG  :             copy 0x433000-0x434000 to 0x7f3dcf87a000-0x7f3dcf87b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355768  spfs-manager(32511): DEBUG  :             copy 0x434000-0x435000 to 0x7f3dcf87b000-0x7f3dcf87c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355791  spfs-manager(32511): DEBUG  :             copy 0x435000-0x436000 to 0x7f3dcf87c000-0x7f3dcf87d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355815  spfs-manager(32511): DEBUG  :             copy 0x436000-0x437000 to 0x7f3dcf87d000-0x7f3dcf87e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355839  spfs-manager(32511): DEBUG  :             copy 0x437000-0x438000 to 0x7f3dcf87e000-0x7f3dcf87f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355863  spfs-manager(32511): DEBUG  :             copy 0x438000-0x439000 to 0x7f3dcf87f000-0x7f3dcf880000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355886  spfs-manager(32511): DEBUG  :             copy 0x439000-0x43a000 to 0x7f3dcf880000-0x7f3dcf881000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355910  spfs-manager(32511): DEBUG  :             copy 0x43a000-0x43b000 to 0x7f3dcf881000-0x7f3dcf882000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355936  spfs-manager(32511): DEBUG  :             copy 0x43b000-0x43c000 to 0x7f3dcf882000-0x7f3dcf883000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355959  spfs-manager(32511): DEBUG  :             copy 0x43c000-0x43d000 to 0x7f3dcf883000-0x7f3dcf884000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.355983  spfs-manager(32511): DEBUG  :             copy 0x43d000-0x43e000 to 0x7f3dcf884000-0x7f3dcf885000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356006  spfs-manager(32511): DEBUG  :             copy 0x43e000-0x43f000 to 0x7f3dcf885000-0x7f3dcf886000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356029  spfs-manager(32511): DEBUG  :             copy 0x43f000-0x440000 to 0x7f3dcf886000-0x7f3dcf887000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356058  spfs-manager(32511): DEBUG  :             copy 0x440000-0x441000 to 0x7f3dcf887000-0x7f3dcf888000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356106  spfs-manager(32511): DEBUG  :             copy 0x441000-0x442000 to 0x7f3dcf888000-0x7f3dcf889000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356132  spfs-manager(32511): DEBUG  :             copy 0x442000-0x443000 to 0x7f3dcf889000-0x7f3dcf88a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356156  spfs-manager(32511): DEBUG  :             copy 0x443000-0x444000 to 0x7f3dcf88a000-0x7f3dcf88b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356183  spfs-manager(32511): DEBUG  :             copy 0x444000-0x445000 to 0x7f3dcf88b000-0x7f3dcf88c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356207  spfs-manager(32511): DEBUG  :             copy 0x445000-0x446000 to 0x7f3dcf88c000-0x7f3dcf88d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356231  spfs-manager(32511): DEBUG  :             copy 0x446000-0x447000 to 0x7f3dcf88d000-0x7f3dcf88e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356255  spfs-manager(32511): DEBUG  :             copy 0x447000-0x448000 to 0x7f3dcf88e000-0x7f3dcf88f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356279  spfs-manager(32511): DEBUG  :             copy 0x449000-0x44a000 to 0x7f3dcf890000-0x7f3dcf891000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356303  spfs-manager(32511): DEBUG  :             copy 0x44a000-0x44b000 to 0x7f3dcf891000-0x7f3dcf892000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356327  spfs-manager(32511): DEBUG  :             copy 0x44b000-0x44c000 to 0x7f3dcf892000-0x7f3dcf893000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356350  spfs-manager(32511): DEBUG  :             copy 0x44c000-0x44d000 to 0x7f3dcf893000-0x7f3dcf894000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356394  spfs-manager(32511): DEBUG  :             copy 0x44d000-0x44e000 to 0x7f3dcf894000-0x7f3dcf895000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356418  spfs-manager(32511): DEBUG  :             copy 0x44e000-0x44f000 to 0x7f3dcf895000-0x7f3dcf896000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356442  spfs-manager(32511): DEBUG  :             copy 0x44f000-0x450000 to 0x7f3dcf896000-0x7f3dcf897000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356466  spfs-manager(32511): DEBUG  :             copy 0x450000-0x451000 to 0x7f3dcf897000-0x7f3dcf898000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356490  spfs-manager(32511): DEBUG  :             copy 0x451000-0x452000 to 0x7f3dcf898000-0x7f3dcf899000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356514  spfs-manager(32511): DEBUG  :             copy 0x452000-0x453000 to 0x7f3dcf899000-0x7f3dcf89a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356539  spfs-manager(32511): DEBUG  :             copy 0x453000-0x454000 to 0x7f3dcf89a000-0x7f3dcf89b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356564  spfs-manager(32511): DEBUG  :             copy 0x455000-0x456000 to 0x7f3dcf89c000-0x7f3dcf89d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356588  spfs-manager(32511): DEBUG  :             copy 0x457000-0x458000 to 0x7f3dcf89e000-0x7f3dcf89f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356612  spfs-manager(32511): DEBUG  :             copy 0x458000-0x459000 to 0x7f3dcf89f000-0x7f3dcf8a0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356635  spfs-manager(32511): DEBUG  :             copy 0x459000-0x45a000 to 0x7f3dcf8a0000-0x7f3dcf8a1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356659  spfs-manager(32511): DEBUG  :             copy 0x45a000-0x45b000 to 0x7f3dcf8a1000-0x7f3dcf8a2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356683  spfs-manager(32511): DEBUG  :             copy 0x45b000-0x45c000 to 0x7f3dcf8a2000-0x7f3dcf8a3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356707  spfs-manager(32511): DEBUG  :             copy 0x45c000-0x45d000 to 0x7f3dcf8a3000-0x7f3dcf8a4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356730  spfs-manager(32511): DEBUG  :             copy 0x45d000-0x45e000 to 0x7f3dcf8a4000-0x7f3dcf8a5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356754  spfs-manager(32511): DEBUG  :             copy 0x45e000-0x45f000 to 0x7f3dcf8a5000-0x7f3dcf8a6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356778  spfs-manager(32511): DEBUG  :             copy 0x45f000-0x460000 to 0x7f3dcf8a6000-0x7f3dcf8a7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.356806  spfs-manager(32511): DEBUG  :             copy 0x46a000-0x46b000 to 0x7f3dcf8b1000-0x7f3dcf8b2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357017  spfs-manager(32511): DEBUG  :             copy 0x46b000-0x46c000 to 0x7f3dcf8b2000-0x7f3dcf8b3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357050  spfs-manager(32511): DEBUG  :             copy 0x46c000-0x46d000 to 0x7f3dcf8b3000-0x7f3dcf8b4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357079  spfs-manager(32511): DEBUG  :             copy 0x46d000-0x46e000 to 0x7f3dcf8b4000-0x7f3dcf8b5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357115  spfs-manager(32511): DEBUG  :             copy 0x470000-0x471000 to 0x7f3dcf8b7000-0x7f3dcf8b8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357152  spfs-manager(32511): DEBUG  :             copy 0x471000-0x472000 to 0x7f3dcf8b8000-0x7f3dcf8b9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357187  spfs-manager(32511): DEBUG  :             copy 0x472000-0x473000 to 0x7f3dcf8b9000-0x7f3dcf8ba000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357222  spfs-manager(32511): DEBUG  :             copy 0x473000-0x474000 to 0x7f3dcf8ba000-0x7f3dcf8bb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357256  spfs-manager(32511): DEBUG  :             copy 0x475000-0x476000 to 0x7f3dcf8bc000-0x7f3dcf8bd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357288  spfs-manager(32511): DEBUG  :             copy 0x476000-0x477000 to 0x7f3dcf8bd000-0x7f3dcf8be000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357322  spfs-manager(32511): DEBUG  :             copy 0x477000-0x478000 to 0x7f3dcf8be000-0x7f3dcf8bf000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357383  spfs-manager(32511): DEBUG  :             copy 0x478000-0x479000 to 0x7f3dcf8bf000-0x7f3dcf8c0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357424  spfs-manager(32511): DEBUG  :             copy 0x479000-0x47a000 to 0x7f3dcf8c0000-0x7f3dcf8c1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357460  spfs-manager(32511): DEBUG  :             copy 0x47b000-0x47c000 to 0x7f3dcf8c2000-0x7f3dcf8c3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357503  spfs-manager(32511): DEBUG  :             copy 0x47c000-0x47d000 to 0x7f3dcf8c3000-0x7f3dcf8c4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357539  spfs-manager(32511): DEBUG  :             copy 0x47d000-0x47e000 to 0x7f3dcf8c4000-0x7f3dcf8c5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357579  spfs-manager(32511): DEBUG  :             copy 0x47e000-0x47f000 to 0x7f3dcf8c5000-0x7f3dcf8c6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357618  spfs-manager(32511): DEBUG  :             copy 0x480000-0x481000 to 0x7f3dcf8c7000-0x7f3dcf8c8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357836  spfs-manager(32511): DEBUG  :             copy 0x489000-0x48a000 to 0x7f3dcf8d0000-0x7f3dcf8d1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357885  spfs-manager(32511): DEBUG  :             copy 0x48a000-0x48b000 to 0x7f3dcf8d1000-0x7f3dcf8d2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357918  spfs-manager(32511): DEBUG  :             copy 0x48f000-0x490000 to 0x7f3dcf8d6000-0x7f3dcf8d7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.357942  spfs-manager(32511): DEBUG  :             copy 0x490000-0x491000 to 0x7f3dcf8d7000-0x7f3dcf8d8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358152  spfs-manager(32511): DEBUG  :             copy 0x491000-0x492000 to 0x7f3dcf8d8000-0x7f3dcf8d9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358203  spfs-manager(32511): DEBUG  :             copy 0x492000-0x493000 to 0x7f3dcf8d9000-0x7f3dcf8da000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358240  spfs-manager(32511): DEBUG  :             copy 0x493000-0x494000 to 0x7f3dcf8da000-0x7f3dcf8db000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358276  spfs-manager(32511): DEBUG  :             copy 0x494000-0x495000 to 0x7f3dcf8db000-0x7f3dcf8dc000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358314  spfs-manager(32511): DEBUG  :             copy 0x495000-0x496000 to 0x7f3dcf8dc000-0x7f3dcf8dd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358350  spfs-manager(32511): DEBUG  :             copy 0x496000-0x497000 to 0x7f3dcf8dd000-0x7f3dcf8de000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358432  spfs-manager(32511): DEBUG  :             copy 0x497000-0x498000 to 0x7f3dcf8de000-0x7f3dcf8df000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358467  spfs-manager(32511): DEBUG  :             copy 0x498000-0x499000 to 0x7f3dcf8df000-0x7f3dcf8e0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358548  spfs-manager(32511): DEBUG  :             copy 0x499000-0x49a000 to 0x7f3dcf8e0000-0x7f3dcf8e1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358593  spfs-manager(32511): DEBUG  :             copy 0x49a000-0x49b000 to 0x7f3dcf8e1000-0x7f3dcf8e2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358636  spfs-manager(32511): DEBUG  :             copy 0x49b000-0x49c000 to 0x7f3dcf8e2000-0x7f3dcf8e3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358680  spfs-manager(32511): DEBUG  :             copy 0x49c000-0x49d000 to 0x7f3dcf8e3000-0x7f3dcf8e4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358722  spfs-manager(32511): DEBUG  :             copy 0x49d000-0x49e000 to 0x7f3dcf8e4000-0x7f3dcf8e5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358765  spfs-manager(32511): DEBUG  :             copy 0x49e000-0x49f000 to 0x7f3dcf8e5000-0x7f3dcf8e6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358806  spfs-manager(32511): DEBUG  :             copy 0x49f000-0x4a0000 to 0x7f3dcf8e6000-0x7f3dcf8e7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.358840  spfs-manager(32511): DEBUG  :             copy 0x4a0000-0x4a1000 to 0x7f3dcf8e7000-0x7f3dcf8e8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359308  spfs-manager(32511): DEBUG  :             copy 0x4a1000-0x4a2000 to 0x7f3dcf8e8000-0x7f3dcf8e9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359344  spfs-manager(32511): DEBUG  :             copy 0x4a2000-0x4a3000 to 0x7f3dcf8e9000-0x7f3dcf8ea000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359395  spfs-manager(32511): DEBUG  :             copy 0x4a3000-0x4a4000 to 0x7f3dcf8ea000-0x7f3dcf8eb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359432  spfs-manager(32511): DEBUG  :             copy 0x4a4000-0x4a5000 to 0x7f3dcf8eb000-0x7f3dcf8ec000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359474  spfs-manager(32511): DEBUG  :             copy 0x4a5000-0x4a6000 to 0x7f3dcf8ec000-0x7f3dcf8ed000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359501  spfs-manager(32511): DEBUG  :             copy 0x4a6000-0x4a7000 to 0x7f3dcf8ed000-0x7f3dcf8ee000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359526  spfs-manager(32511): DEBUG  :             copy 0x4a7000-0x4a8000 to 0x7f3dcf8ee000-0x7f3dcf8ef000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359550  spfs-manager(32511): DEBUG  :             copy 0x4a8000-0x4a9000 to 0x7f3dcf8ef000-0x7f3dcf8f0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359574  spfs-manager(32511): DEBUG  :             copy 0x4a9000-0x4aa000 to 0x7f3dcf8f0000-0x7f3dcf8f1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359598  spfs-manager(32511): DEBUG  :             copy 0x4aa000-0x4ab000 to 0x7f3dcf8f1000-0x7f3dcf8f2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359622  spfs-manager(32511): DEBUG  :             copy 0x4ab000-0x4ac000 to 0x7f3dcf8f2000-0x7f3dcf8f3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359651  spfs-manager(32511): DEBUG  :             copy 0x4ac000-0x4ad000 to 0x7f3dcf8f3000-0x7f3dcf8f4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359806  spfs-manager(32511): DEBUG  :             copy 0x4ad000-0x4ae000 to 0x7f3dcf8f4000-0x7f3dcf8f5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359840  spfs-manager(32511): DEBUG  :             copy 0x4ae000-0x4af000 to 0x7f3dcf8f5000-0x7f3dcf8f6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359866  spfs-manager(32511): DEBUG  :             copy 0x4af000-0x4b0000 to 0x7f3dcf8f6000-0x7f3dcf8f7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359890  spfs-manager(32511): DEBUG  :             copy 0x4b0000-0x4b1000 to 0x7f3dcf8f7000-0x7f3dcf8f8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359915  spfs-manager(32511): DEBUG  :             copy 0x4b1000-0x4b2000 to 0x7f3dcf8f8000-0x7f3dcf8f9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359940  spfs-manager(32511): DEBUG  :             copy 0x4b2000-0x4b3000 to 0x7f3dcf8f9000-0x7f3dcf8fa000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359972  spfs-manager(32511): DEBUG  :             copy 0x4b3000-0x4b4000 to 0x7f3dcf8fa000-0x7f3dcf8fb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.359997  spfs-manager(32511): DEBUG  :             copy 0x4b4000-0x4b5000 to 0x7f3dcf8fb000-0x7f3dcf8fc000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360021  spfs-manager(32511): DEBUG  :             copy 0x4b5000-0x4b6000 to 0x7f3dcf8fc000-0x7f3dcf8fd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360045  spfs-manager(32511): DEBUG  :             copy 0x4b6000-0x4b7000 to 0x7f3dcf8fd000-0x7f3dcf8fe000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360070  spfs-manager(32511): DEBUG  :             copy 0x4b7000-0x4b8000 to 0x7f3dcf8fe000-0x7f3dcf8ff000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360094  spfs-manager(32511): DEBUG  :             copy 0x4b8000-0x4b9000 to 0x7f3dcf8ff000-0x7f3dcf900000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360119  spfs-manager(32511): DEBUG  :             copy 0x4ba000-0x4bb000 to 0x7f3dcf901000-0x7f3dcf902000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360143  spfs-manager(32511): DEBUG  :             copy 0x4bb000-0x4bc000 to 0x7f3dcf902000-0x7f3dcf903000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360172  spfs-manager(32511): DEBUG  :         remapping 7f3dcf847000 to 400000, size=d4000
+Tue Jun 12 2018 00:50:05.360321  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/map_files/6d3000-6d4000
+Tue Jun 12 2018 00:50:05.360411  spfs-manager(32511): DEBUG  :         mmap to replace 6d3000-6d4000, prot=1, flags=2, off=d3000
+Tue Jun 12 2018 00:50:05.360467  spfs-manager(32511): DEBUG  :             copy 0x6d3000-0x6d4000 to 0x7f3dd9e18000-0x7f3dd9e19000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360502  spfs-manager(32511): DEBUG  :         remapping 7f3dd9e18000 to 6d3000, size=1000
+Tue Jun 12 2018 00:50:05.360574  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/map_files/6d4000-6d7000
+Tue Jun 12 2018 00:50:05.360634  spfs-manager(32511): DEBUG  :         mmap to replace 6d4000-6d7000, prot=3, flags=2, off=d4000
+Tue Jun 12 2018 00:50:05.360684  spfs-manager(32511): DEBUG  :             copy 0x6d4000-0x6d5000 to 0x7f3dd9c57000-0x7f3dd9c58000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360715  spfs-manager(32511): DEBUG  :             copy 0x6d5000-0x6d6000 to 0x7f3dd9c58000-0x7f3dd9c59000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360740  spfs-manager(32511): DEBUG  :             copy 0x6d6000-0x6d7000 to 0x7f3dd9c59000-0x7f3dd9c5a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.360767  spfs-manager(32511): DEBUG  :         remapping 7f3dd9c57000 to 6d4000, size=3000
+Tue Jun 12 2018 00:50:05.360930  spfs-manager(32511): DEBUG  :     /proc/32511/fd/17 --> /proc/32475/cwd
+Tue Jun 12 2018 00:50:05.361075  spfs-manager(32511): DEBUG  :     /proc/32511/fd/16 --> /proc/32475/exe
+Tue Jun 12 2018 00:50:05.361316  spfs-manager(32511): INFO   :     32475 released
+Tue Jun 12 2018 00:50:05.361479  spfs-manager(32510): DEBUG  : child 32511 exited successfully
+Tue Jun 12 2018 00:50:05.361530  spfs-manager(32510): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Jun 12 2018 00:50:05.361542  spfs-manager(32510): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(32496): DEBUG  : 32510 exited, status=0
+Tue Jun 12 2018 00:50:05.361860  spfs-manager(32496): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Jun 12 2018 00:50:05.361887  spfs-manager(32496): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Jun 12 2018 00:50:05.361900  spfs-manager(32496): DEBUG  : received 21 bytes
+Tue Jun 12 2018 00:50:05.361910  spfs-manager(32496): DEBUG  : received request: "mode"
+Tue Jun 12 2018 00:50:05.361919  spfs-manager(32496): DEBUG  :     options: id=0;mode=stub;
+Tue Jun 12 2018 00:50:05.362115  spfs-manager(32512): DEBUG  : changing spfs 0 mode to 1 (path: none)
+Tue Jun 12 2018 00:50:05.362277  spfs-manager(32512): INFO   : spfs 0 mode was changed to 1 (path: (null), ns_pid: 0)
+spfs-manager(32496): DEBUG  : 32512 exited, status=0
+Tue Jun 12 2018 00:50:05.363200  spfs-manager(32496): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Jun 12 2018 00:50:05.415789  spfs-manager(32496): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Jun 12 2018 00:50:05.415844  spfs-manager(32496): DEBUG  : received 58 bytes
+Tue Jun 12 2018 00:50:05.415857  spfs-manager(32496): DEBUG  : received request: "mode"
+Tue Jun 12 2018 00:50:05.415867  spfs-manager(32496): DEBUG  :     options: mode=proxy;proxy_dir=/root/Quake3/quake3-test2;id=0;
+Tue Jun 12 2018 00:50:05.416094  spfs-manager(32516): DEBUG  : changing spfs 0 mode to 0 (path: /root/Quake3/quake3-test2)
+Tue Jun 12 2018 00:50:05.416271  spfs-manager(32516): INFO   : spfs 0 mode was changed to 0 (path: /root/Quake3/quake3-test2, ns_pid: 0)
+spfs-manager(32496): DEBUG  : 32516 exited, status=0
+Tue Jun 12 2018 00:50:05.416555  spfs-manager(32496): DEBUG  : unreliable_conn_handler: peer was closed
+Tue Jun 12 2018 00:50:05.416582  spfs-manager(32496): DEBUG  : unreliable_socket_loop: accepted new socket
+Tue Jun 12 2018 00:50:05.416595  spfs-manager(32496): DEBUG  : received 130 bytes
+Tue Jun 12 2018 00:50:05.416605  spfs-manager(32496): DEBUG  : received request: "switch"
+Tue Jun 12 2018 00:50:05.416614  spfs-manager(32496): DEBUG  :     options: source=/root/work-dir/spfs-mnt;target=/root/Quake3/quake3-test2;freeze_cgroup=/sys/fs/cgroup/freezer/spfs_switcher_active;
+Tue Jun 12 2018 00:50:05.416943  spfs-manager(32517): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was locked
+Tue Jun 12 2018 00:50:05.417017  spfs-manager(32517): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was frozen
+Tue Jun 12 2018 00:50:05.417203  spfs-manager(32518): DEBUG  : Pids list:
+32475
+
+Tue Jun 12 2018 00:50:05.417288  spfs-manager(32518): DEBUG  : Collecting processes...
+Tue Jun 12 2018 00:50:05.417403  spfs-manager(32518): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Jun 12 2018 00:50:05.417418  spfs-manager(32518): DEBUG  : Seizing processes...
+Tue Jun 12 2018 00:50:05.417535  spfs-manager(32518): INFO   :     32475 seized
+Tue Jun 12 2018 00:50:05.417554  spfs-manager(32518): DEBUG  : Collecting sockets:
+Tue Jun 12 2018 00:50:05.417808  spfs-manager(32518): DEBUG  : Process 32475: examining...
+Tue Jun 12 2018 00:50:05.417873  spfs-manager(32518): DEBUG  :     Using mapping: 00400000-004d4000 r-xp 00000000 00:38 12                                 /root/work-dir/spfs-mnt/ioq3ded.x86_64
+Tue Jun 12 2018 00:50:05.417907  spfs-manager(32518): WARNING:     Process 32475 will restart system call
+Tue Jun 12 2018 00:50:05.418089  spfs-manager(32518): DEBUG  :         Set remote sock SWAPFD-remote-32475-0
+Tue Jun 12 2018 00:50:05.418296  spfs-manager(32518): DEBUG  :     /proc/32475/cwd ---> /root/Quake3/quake3-test2
+Tue Jun 12 2018 00:50:05.418490  spfs-manager(32518): DEBUG  :     /proc/32475/fd/3 ---> /root/Quake3/quake3-test2/baseq3/pak0.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.418579  spfs-manager(32518): DEBUG  :     /proc/32475/fd/4 ---> /root/Quake3/quake3-test2/baseq3/pak1.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.418664  spfs-manager(32518): DEBUG  :     /proc/32475/fd/5 ---> /root/Quake3/quake3-test2/baseq3/pak2.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.418748  spfs-manager(32518): DEBUG  :     /proc/32475/fd/6 ---> /root/Quake3/quake3-test2/baseq3/pak3.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.418831  spfs-manager(32518): DEBUG  :     /proc/32475/fd/7 ---> /root/Quake3/quake3-test2/baseq3/pak4.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.418964  spfs-manager(32518): DEBUG  :     /proc/32475/fd/8 ---> /root/Quake3/quake3-test2/baseq3/pak5.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.419050  spfs-manager(32518): DEBUG  :     /proc/32475/fd/9 ---> /root/Quake3/quake3-test2/baseq3/pak6.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.419134  spfs-manager(32518): DEBUG  :     /proc/32475/fd/10 ---> /root/Quake3/quake3-test2/baseq3/pak7.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.419218  spfs-manager(32518): DEBUG  :     /proc/32475/fd/11 ---> /root/Quake3/quake3-test2/baseq3/pak8.pk3 (flags: 0100000)
+Tue Jun 12 2018 00:50:05.419547  spfs-manager(32518): DEBUG  :     /proc/32475/exe ---> /root/Quake3/quake3-test2/ioq3ded.x86_64
+Tue Jun 12 2018 00:50:05.419751  spfs-manager(32518): DEBUG  :     /proc/32475/map_files/400000-4d4000 ---> /root/Quake3/quake3-test2/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.419994  spfs-manager(32518): DEBUG  :     /proc/32475/map_files/6d3000-6d4000 ---> /root/Quake3/quake3-test2/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.420150  spfs-manager(32518): DEBUG  :     /proc/32475/map_files/6d4000-6d7000 ---> /root/Quake3/quake3-test2/ioq3ded.x86_64 (flags: 00)
+Tue Jun 12 2018 00:50:05.420856  spfs-manager(32518): DEBUG  : Swapping resources:
+Tue Jun 12 2018 00:50:05.420873  spfs-manager(32518): INFO   : Swapping process 32475 resources:
+Tue Jun 12 2018 00:50:05.420889  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/3 (29614080)
+Tue Jun 12 2018 00:50:05.421082  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/4 (374405)
+Tue Jun 12 2018 00:50:05.421268  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/5 (7511182)
+Tue Jun 12 2018 00:50:05.421473  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/6 (276305)
+Tue Jun 12 2018 00:50:05.421691  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/7 (9600350)
+Tue Jun 12 2018 00:50:05.421878  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/8 (191872)
+Tue Jun 12 2018 00:50:05.422061  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/9 (7346884)
+Tue Jun 12 2018 00:50:05.422244  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/10 (320873)
+Tue Jun 12 2018 00:50:05.422454  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/fd/11 (454478)
+Tue Jun 12 2018 00:50:05.422645  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/map_files/400000-4d4000
+Tue Jun 12 2018 00:50:05.422744  spfs-manager(32518): DEBUG  :         mmap to replace 400000-4d4000, prot=5, flags=2, off=0
+Tue Jun 12 2018 00:50:05.422814  spfs-manager(32518): DEBUG  :             copy 0x400000-0x401000 to 0x7f3dcf847000-0x7f3dcf848000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.422866  spfs-manager(32518): DEBUG  :             copy 0x401000-0x402000 to 0x7f3dcf848000-0x7f3dcf849000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.422921  spfs-manager(32518): DEBUG  :             copy 0x402000-0x403000 to 0x7f3dcf849000-0x7f3dcf84a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.422950  spfs-manager(32518): DEBUG  :             copy 0x403000-0x404000 to 0x7f3dcf84a000-0x7f3dcf84b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.422978  spfs-manager(32518): DEBUG  :             copy 0x404000-0x405000 to 0x7f3dcf84b000-0x7f3dcf84c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423233  spfs-manager(32518): DEBUG  :             copy 0x405000-0x406000 to 0x7f3dcf84c000-0x7f3dcf84d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423330  spfs-manager(32518): DEBUG  :             copy 0x406000-0x407000 to 0x7f3dcf84d000-0x7f3dcf84e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423389  spfs-manager(32518): DEBUG  :             copy 0x407000-0x408000 to 0x7f3dcf84e000-0x7f3dcf84f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423420  spfs-manager(32518): DEBUG  :             copy 0x408000-0x409000 to 0x7f3dcf84f000-0x7f3dcf850000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423448  spfs-manager(32518): DEBUG  :             copy 0x40a000-0x40b000 to 0x7f3dcf851000-0x7f3dcf852000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423476  spfs-manager(32518): DEBUG  :             copy 0x40b000-0x40c000 to 0x7f3dcf852000-0x7f3dcf853000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423503  spfs-manager(32518): DEBUG  :             copy 0x40c000-0x40d000 to 0x7f3dcf853000-0x7f3dcf854000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423671  spfs-manager(32518): DEBUG  :             copy 0x40d000-0x40e000 to 0x7f3dcf854000-0x7f3dcf855000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423706  spfs-manager(32518): DEBUG  :             copy 0x40e000-0x40f000 to 0x7f3dcf855000-0x7f3dcf856000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423742  spfs-manager(32518): DEBUG  :             copy 0x40f000-0x410000 to 0x7f3dcf856000-0x7f3dcf857000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423769  spfs-manager(32518): DEBUG  :             copy 0x410000-0x411000 to 0x7f3dcf857000-0x7f3dcf858000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423796  spfs-manager(32518): DEBUG  :             copy 0x411000-0x412000 to 0x7f3dcf858000-0x7f3dcf859000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423822  spfs-manager(32518): DEBUG  :             copy 0x412000-0x413000 to 0x7f3dcf859000-0x7f3dcf85a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423849  spfs-manager(32518): DEBUG  :             copy 0x413000-0x414000 to 0x7f3dcf85a000-0x7f3dcf85b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.423876  spfs-manager(32518): DEBUG  :             copy 0x414000-0x415000 to 0x7f3dcf85b000-0x7f3dcf85c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424031  spfs-manager(32518): DEBUG  :             copy 0x415000-0x416000 to 0x7f3dcf85c000-0x7f3dcf85d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424066  spfs-manager(32518): DEBUG  :             copy 0x416000-0x417000 to 0x7f3dcf85d000-0x7f3dcf85e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424093  spfs-manager(32518): DEBUG  :             copy 0x417000-0x418000 to 0x7f3dcf85e000-0x7f3dcf85f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424120  spfs-manager(32518): DEBUG  :             copy 0x418000-0x419000 to 0x7f3dcf85f000-0x7f3dcf860000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424146  spfs-manager(32518): DEBUG  :             copy 0x419000-0x41a000 to 0x7f3dcf860000-0x7f3dcf861000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424173  spfs-manager(32518): DEBUG  :             copy 0x41a000-0x41b000 to 0x7f3dcf861000-0x7f3dcf862000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424200  spfs-manager(32518): DEBUG  :             copy 0x41b000-0x41c000 to 0x7f3dcf862000-0x7f3dcf863000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424226  spfs-manager(32518): DEBUG  :             copy 0x41c000-0x41d000 to 0x7f3dcf863000-0x7f3dcf864000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424439  spfs-manager(32518): DEBUG  :             copy 0x41d000-0x41e000 to 0x7f3dcf864000-0x7f3dcf865000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424475  spfs-manager(32518): DEBUG  :             copy 0x41e000-0x41f000 to 0x7f3dcf865000-0x7f3dcf866000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424503  spfs-manager(32518): DEBUG  :             copy 0x41f000-0x420000 to 0x7f3dcf866000-0x7f3dcf867000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424530  spfs-manager(32518): DEBUG  :             copy 0x420000-0x421000 to 0x7f3dcf867000-0x7f3dcf868000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424557  spfs-manager(32518): DEBUG  :             copy 0x421000-0x422000 to 0x7f3dcf868000-0x7f3dcf869000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424583  spfs-manager(32518): DEBUG  :             copy 0x422000-0x423000 to 0x7f3dcf869000-0x7f3dcf86a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424610  spfs-manager(32518): DEBUG  :             copy 0x423000-0x424000 to 0x7f3dcf86a000-0x7f3dcf86b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424636  spfs-manager(32518): DEBUG  :             copy 0x424000-0x425000 to 0x7f3dcf86b000-0x7f3dcf86c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424851  spfs-manager(32518): DEBUG  :             copy 0x425000-0x426000 to 0x7f3dcf86c000-0x7f3dcf86d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424890  spfs-manager(32518): DEBUG  :             copy 0x426000-0x427000 to 0x7f3dcf86d000-0x7f3dcf86e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424919  spfs-manager(32518): DEBUG  :             copy 0x427000-0x428000 to 0x7f3dcf86e000-0x7f3dcf86f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.424964  spfs-manager(32518): DEBUG  :             copy 0x428000-0x429000 to 0x7f3dcf86f000-0x7f3dcf870000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425392  spfs-manager(32518): DEBUG  :             copy 0x429000-0x42a000 to 0x7f3dcf870000-0x7f3dcf871000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425446  spfs-manager(32518): DEBUG  :             copy 0x42a000-0x42b000 to 0x7f3dcf871000-0x7f3dcf872000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425485  spfs-manager(32518): DEBUG  :             copy 0x42b000-0x42c000 to 0x7f3dcf872000-0x7f3dcf873000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425514  spfs-manager(32518): DEBUG  :             copy 0x42c000-0x42d000 to 0x7f3dcf873000-0x7f3dcf874000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425795  spfs-manager(32518): DEBUG  :             copy 0x42d000-0x42e000 to 0x7f3dcf874000-0x7f3dcf875000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425838  spfs-manager(32518): DEBUG  :             copy 0x42e000-0x42f000 to 0x7f3dcf875000-0x7f3dcf876000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425866  spfs-manager(32518): DEBUG  :             copy 0x42f000-0x430000 to 0x7f3dcf876000-0x7f3dcf877000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425893  spfs-manager(32518): DEBUG  :             copy 0x430000-0x431000 to 0x7f3dcf877000-0x7f3dcf878000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425936  spfs-manager(32518): DEBUG  :             copy 0x431000-0x432000 to 0x7f3dcf878000-0x7f3dcf879000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425965  spfs-manager(32518): DEBUG  :             copy 0x432000-0x433000 to 0x7f3dcf879000-0x7f3dcf87a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.425992  spfs-manager(32518): DEBUG  :             copy 0x433000-0x434000 to 0x7f3dcf87a000-0x7f3dcf87b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426018  spfs-manager(32518): DEBUG  :             copy 0x434000-0x435000 to 0x7f3dcf87b000-0x7f3dcf87c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426196  spfs-manager(32518): DEBUG  :             copy 0x435000-0x436000 to 0x7f3dcf87c000-0x7f3dcf87d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426233  spfs-manager(32518): DEBUG  :             copy 0x436000-0x437000 to 0x7f3dcf87d000-0x7f3dcf87e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426261  spfs-manager(32518): DEBUG  :             copy 0x437000-0x438000 to 0x7f3dcf87e000-0x7f3dcf87f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426288  spfs-manager(32518): DEBUG  :             copy 0x438000-0x439000 to 0x7f3dcf87f000-0x7f3dcf880000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426315  spfs-manager(32518): DEBUG  :             copy 0x439000-0x43a000 to 0x7f3dcf880000-0x7f3dcf881000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426341  spfs-manager(32518): DEBUG  :             copy 0x43a000-0x43b000 to 0x7f3dcf881000-0x7f3dcf882000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426393  spfs-manager(32518): DEBUG  :             copy 0x43b000-0x43c000 to 0x7f3dcf882000-0x7f3dcf883000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426423  spfs-manager(32518): DEBUG  :             copy 0x43c000-0x43d000 to 0x7f3dcf883000-0x7f3dcf884000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426571  spfs-manager(32518): DEBUG  :             copy 0x43d000-0x43e000 to 0x7f3dcf884000-0x7f3dcf885000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426611  spfs-manager(32518): DEBUG  :             copy 0x43e000-0x43f000 to 0x7f3dcf885000-0x7f3dcf886000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426639  spfs-manager(32518): DEBUG  :             copy 0x43f000-0x440000 to 0x7f3dcf886000-0x7f3dcf887000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426666  spfs-manager(32518): DEBUG  :             copy 0x440000-0x441000 to 0x7f3dcf887000-0x7f3dcf888000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426695  spfs-manager(32518): DEBUG  :             copy 0x441000-0x442000 to 0x7f3dcf888000-0x7f3dcf889000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426722  spfs-manager(32518): DEBUG  :             copy 0x442000-0x443000 to 0x7f3dcf889000-0x7f3dcf88a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426749  spfs-manager(32518): DEBUG  :             copy 0x443000-0x444000 to 0x7f3dcf88a000-0x7f3dcf88b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.426775  spfs-manager(32518): DEBUG  :             copy 0x444000-0x445000 to 0x7f3dcf88b000-0x7f3dcf88c000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427056  spfs-manager(32518): DEBUG  :             copy 0x445000-0x446000 to 0x7f3dcf88c000-0x7f3dcf88d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427112  spfs-manager(32518): DEBUG  :             copy 0x446000-0x447000 to 0x7f3dcf88d000-0x7f3dcf88e000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427163  spfs-manager(32518): DEBUG  :             copy 0x447000-0x448000 to 0x7f3dcf88e000-0x7f3dcf88f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427204  spfs-manager(32518): DEBUG  :             copy 0x449000-0x44a000 to 0x7f3dcf890000-0x7f3dcf891000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427232  spfs-manager(32518): DEBUG  :             copy 0x44a000-0x44b000 to 0x7f3dcf891000-0x7f3dcf892000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427259  spfs-manager(32518): DEBUG  :             copy 0x44b000-0x44c000 to 0x7f3dcf892000-0x7f3dcf893000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.427285  spfs-manager(32518): DEBUG  :             copy 0x44c000-0x44d000 to 0x7f3dcf893000-0x7f3dcf894000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.428768  spfs-manager(32518): DEBUG  :             copy 0x44d000-0x44e000 to 0x7f3dcf894000-0x7f3dcf895000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.428841  spfs-manager(32518): DEBUG  :             copy 0x44e000-0x44f000 to 0x7f3dcf895000-0x7f3dcf896000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.428888  spfs-manager(32518): DEBUG  :             copy 0x44f000-0x450000 to 0x7f3dcf896000-0x7f3dcf897000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.428931  spfs-manager(32518): DEBUG  :             copy 0x450000-0x451000 to 0x7f3dcf897000-0x7f3dcf898000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.428975  spfs-manager(32518): DEBUG  :             copy 0x451000-0x452000 to 0x7f3dcf898000-0x7f3dcf899000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.429017  spfs-manager(32518): DEBUG  :             copy 0x452000-0x453000 to 0x7f3dcf899000-0x7f3dcf89a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.429062  spfs-manager(32518): DEBUG  :             copy 0x453000-0x454000 to 0x7f3dcf89a000-0x7f3dcf89b000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.429142  spfs-manager(32518): DEBUG  :             copy 0x455000-0x456000 to 0x7f3dcf89c000-0x7f3dcf89d000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.429928  spfs-manager(32518): DEBUG  :             copy 0x457000-0x458000 to 0x7f3dcf89e000-0x7f3dcf89f000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430118  spfs-manager(32518): DEBUG  :             copy 0x458000-0x459000 to 0x7f3dcf89f000-0x7f3dcf8a0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430205  spfs-manager(32518): DEBUG  :             copy 0x459000-0x45a000 to 0x7f3dcf8a0000-0x7f3dcf8a1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430260  spfs-manager(32518): DEBUG  :             copy 0x45a000-0x45b000 to 0x7f3dcf8a1000-0x7f3dcf8a2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430308  spfs-manager(32518): DEBUG  :             copy 0x45b000-0x45c000 to 0x7f3dcf8a2000-0x7f3dcf8a3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430381  spfs-manager(32518): DEBUG  :             copy 0x45c000-0x45d000 to 0x7f3dcf8a3000-0x7f3dcf8a4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430666  spfs-manager(32518): DEBUG  :             copy 0x45d000-0x45e000 to 0x7f3dcf8a4000-0x7f3dcf8a5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430722  spfs-manager(32518): DEBUG  :             copy 0x45e000-0x45f000 to 0x7f3dcf8a5000-0x7f3dcf8a6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430768  spfs-manager(32518): DEBUG  :             copy 0x45f000-0x460000 to 0x7f3dcf8a6000-0x7f3dcf8a7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.430813  spfs-manager(32518): DEBUG  :             copy 0x46a000-0x46b000 to 0x7f3dcf8b1000-0x7f3dcf8b2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.431078  spfs-manager(32518): DEBUG  :             copy 0x46b000-0x46c000 to 0x7f3dcf8b2000-0x7f3dcf8b3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.431131  spfs-manager(32518): DEBUG  :             copy 0x46c000-0x46d000 to 0x7f3dcf8b3000-0x7f3dcf8b4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.434016  spfs-manager(32518): DEBUG  :             copy 0x46d000-0x46e000 to 0x7f3dcf8b4000-0x7f3dcf8b5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.434515  spfs-manager(32518): DEBUG  :             copy 0x470000-0x471000 to 0x7f3dcf8b7000-0x7f3dcf8b8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.434659  spfs-manager(32518): DEBUG  :             copy 0x471000-0x472000 to 0x7f3dcf8b8000-0x7f3dcf8b9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.434743  spfs-manager(32518): DEBUG  :             copy 0x472000-0x473000 to 0x7f3dcf8b9000-0x7f3dcf8ba000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.434987  spfs-manager(32518): DEBUG  :             copy 0x473000-0x474000 to 0x7f3dcf8ba000-0x7f3dcf8bb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.435092  spfs-manager(32518): DEBUG  :             copy 0x475000-0x476000 to 0x7f3dcf8bc000-0x7f3dcf8bd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439177  spfs-manager(32518): DEBUG  :             copy 0x476000-0x477000 to 0x7f3dcf8bd000-0x7f3dcf8be000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439252  spfs-manager(32518): DEBUG  :             copy 0x477000-0x478000 to 0x7f3dcf8be000-0x7f3dcf8bf000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439282  spfs-manager(32518): DEBUG  :             copy 0x478000-0x479000 to 0x7f3dcf8bf000-0x7f3dcf8c0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439310  spfs-manager(32518): DEBUG  :             copy 0x479000-0x47a000 to 0x7f3dcf8c0000-0x7f3dcf8c1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439338  spfs-manager(32518): DEBUG  :             copy 0x47b000-0x47c000 to 0x7f3dcf8c2000-0x7f3dcf8c3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439402  spfs-manager(32518): DEBUG  :             copy 0x47c000-0x47d000 to 0x7f3dcf8c3000-0x7f3dcf8c4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439632  spfs-manager(32518): DEBUG  :             copy 0x47d000-0x47e000 to 0x7f3dcf8c4000-0x7f3dcf8c5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439675  spfs-manager(32518): DEBUG  :             copy 0x47e000-0x47f000 to 0x7f3dcf8c5000-0x7f3dcf8c6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439704  spfs-manager(32518): DEBUG  :             copy 0x480000-0x481000 to 0x7f3dcf8c7000-0x7f3dcf8c8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439731  spfs-manager(32518): DEBUG  :             copy 0x489000-0x48a000 to 0x7f3dcf8d0000-0x7f3dcf8d1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439903  spfs-manager(32518): DEBUG  :             copy 0x48a000-0x48b000 to 0x7f3dcf8d1000-0x7f3dcf8d2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.439940  spfs-manager(32518): DEBUG  :             copy 0x48f000-0x490000 to 0x7f3dcf8d6000-0x7f3dcf8d7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440122  spfs-manager(32518): DEBUG  :             copy 0x490000-0x491000 to 0x7f3dcf8d7000-0x7f3dcf8d8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440163  spfs-manager(32518): DEBUG  :             copy 0x491000-0x492000 to 0x7f3dcf8d8000-0x7f3dcf8d9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440191  spfs-manager(32518): DEBUG  :             copy 0x492000-0x493000 to 0x7f3dcf8d9000-0x7f3dcf8da000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440218  spfs-manager(32518): DEBUG  :             copy 0x493000-0x494000 to 0x7f3dcf8da000-0x7f3dcf8db000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440416  spfs-manager(32518): DEBUG  :             copy 0x494000-0x495000 to 0x7f3dcf8db000-0x7f3dcf8dc000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440455  spfs-manager(32518): DEBUG  :             copy 0x495000-0x496000 to 0x7f3dcf8dc000-0x7f3dcf8dd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440483  spfs-manager(32518): DEBUG  :             copy 0x496000-0x497000 to 0x7f3dcf8dd000-0x7f3dcf8de000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440511  spfs-manager(32518): DEBUG  :             copy 0x497000-0x498000 to 0x7f3dcf8de000-0x7f3dcf8df000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440538  spfs-manager(32518): DEBUG  :             copy 0x498000-0x499000 to 0x7f3dcf8df000-0x7f3dcf8e0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440719  spfs-manager(32518): DEBUG  :             copy 0x499000-0x49a000 to 0x7f3dcf8e0000-0x7f3dcf8e1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440759  spfs-manager(32518): DEBUG  :             copy 0x49a000-0x49b000 to 0x7f3dcf8e1000-0x7f3dcf8e2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440787  spfs-manager(32518): DEBUG  :             copy 0x49b000-0x49c000 to 0x7f3dcf8e2000-0x7f3dcf8e3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440815  spfs-manager(32518): DEBUG  :             copy 0x49c000-0x49d000 to 0x7f3dcf8e3000-0x7f3dcf8e4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440842  spfs-manager(32518): DEBUG  :             copy 0x49d000-0x49e000 to 0x7f3dcf8e4000-0x7f3dcf8e5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440879  spfs-manager(32518): DEBUG  :             copy 0x49e000-0x49f000 to 0x7f3dcf8e5000-0x7f3dcf8e6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440907  spfs-manager(32518): DEBUG  :             copy 0x49f000-0x4a0000 to 0x7f3dcf8e6000-0x7f3dcf8e7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.440934  spfs-manager(32518): DEBUG  :             copy 0x4a0000-0x4a1000 to 0x7f3dcf8e7000-0x7f3dcf8e8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441136  spfs-manager(32518): DEBUG  :             copy 0x4a1000-0x4a2000 to 0x7f3dcf8e8000-0x7f3dcf8e9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441178  spfs-manager(32518): DEBUG  :             copy 0x4a2000-0x4a3000 to 0x7f3dcf8e9000-0x7f3dcf8ea000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441206  spfs-manager(32518): DEBUG  :             copy 0x4a3000-0x4a4000 to 0x7f3dcf8ea000-0x7f3dcf8eb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441234  spfs-manager(32518): DEBUG  :             copy 0x4a4000-0x4a5000 to 0x7f3dcf8eb000-0x7f3dcf8ec000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441262  spfs-manager(32518): DEBUG  :             copy 0x4a5000-0x4a6000 to 0x7f3dcf8ec000-0x7f3dcf8ed000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441289  spfs-manager(32518): DEBUG  :             copy 0x4a6000-0x4a7000 to 0x7f3dcf8ed000-0x7f3dcf8ee000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441317  spfs-manager(32518): DEBUG  :             copy 0x4a7000-0x4a8000 to 0x7f3dcf8ee000-0x7f3dcf8ef000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441346  spfs-manager(32518): DEBUG  :             copy 0x4a8000-0x4a9000 to 0x7f3dcf8ef000-0x7f3dcf8f0000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441559  spfs-manager(32518): DEBUG  :             copy 0x4a9000-0x4aa000 to 0x7f3dcf8f0000-0x7f3dcf8f1000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441610  spfs-manager(32518): DEBUG  :             copy 0x4aa000-0x4ab000 to 0x7f3dcf8f1000-0x7f3dcf8f2000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441713  spfs-manager(32518): DEBUG  :             copy 0x4ab000-0x4ac000 to 0x7f3dcf8f2000-0x7f3dcf8f3000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441745  spfs-manager(32518): DEBUG  :             copy 0x4ac000-0x4ad000 to 0x7f3dcf8f3000-0x7f3dcf8f4000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441773  spfs-manager(32518): DEBUG  :             copy 0x4ad000-0x4ae000 to 0x7f3dcf8f4000-0x7f3dcf8f5000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441800  spfs-manager(32518): DEBUG  :             copy 0x4ae000-0x4af000 to 0x7f3dcf8f5000-0x7f3dcf8f6000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441828  spfs-manager(32518): DEBUG  :             copy 0x4af000-0x4b0000 to 0x7f3dcf8f6000-0x7f3dcf8f7000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.441856  spfs-manager(32518): DEBUG  :             copy 0x4b0000-0x4b1000 to 0x7f3dcf8f7000-0x7f3dcf8f8000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442046  spfs-manager(32518): DEBUG  :             copy 0x4b1000-0x4b2000 to 0x7f3dcf8f8000-0x7f3dcf8f9000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442086  spfs-manager(32518): DEBUG  :             copy 0x4b2000-0x4b3000 to 0x7f3dcf8f9000-0x7f3dcf8fa000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442114  spfs-manager(32518): DEBUG  :             copy 0x4b3000-0x4b4000 to 0x7f3dcf8fa000-0x7f3dcf8fb000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442142  spfs-manager(32518): DEBUG  :             copy 0x4b4000-0x4b5000 to 0x7f3dcf8fb000-0x7f3dcf8fc000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442169  spfs-manager(32518): DEBUG  :             copy 0x4b5000-0x4b6000 to 0x7f3dcf8fc000-0x7f3dcf8fd000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442196  spfs-manager(32518): DEBUG  :             copy 0x4b6000-0x4b7000 to 0x7f3dcf8fd000-0x7f3dcf8fe000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442224  spfs-manager(32518): DEBUG  :             copy 0x4b7000-0x4b8000 to 0x7f3dcf8fe000-0x7f3dcf8ff000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442251  spfs-manager(32518): DEBUG  :             copy 0x4b8000-0x4b9000 to 0x7f3dcf8ff000-0x7f3dcf900000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442460  spfs-manager(32518): DEBUG  :             copy 0x4ba000-0x4bb000 to 0x7f3dcf901000-0x7f3dcf902000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442508  spfs-manager(32518): DEBUG  :             copy 0x4bb000-0x4bc000 to 0x7f3dcf902000-0x7f3dcf903000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.442540  spfs-manager(32518): DEBUG  :         remapping 7f3dcf847000 to 400000, size=d4000
+Tue Jun 12 2018 00:50:05.442692  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/map_files/6d3000-6d4000
+Tue Jun 12 2018 00:50:05.442769  spfs-manager(32518): DEBUG  :         mmap to replace 6d3000-6d4000, prot=1, flags=2, off=d3000
+Tue Jun 12 2018 00:50:05.442824  spfs-manager(32518): DEBUG  :             copy 0x6d3000-0x6d4000 to 0x7f3dd9e18000-0x7f3dd9e19000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.443058  spfs-manager(32518): DEBUG  :         remapping 7f3dd9e18000 to 6d3000, size=1000
+Tue Jun 12 2018 00:50:05.443146  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/map_files/6d4000-6d7000
+Tue Jun 12 2018 00:50:05.443211  spfs-manager(32518): DEBUG  :         mmap to replace 6d4000-6d7000, prot=3, flags=2, off=d4000
+Tue Jun 12 2018 00:50:05.443262  spfs-manager(32518): DEBUG  :             copy 0x6d4000-0x6d5000 to 0x7f3dd9c57000-0x7f3dd9c58000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.443298  spfs-manager(32518): DEBUG  :             copy 0x6d5000-0x6d6000 to 0x7f3dd9c58000-0x7f3dd9c59000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.443325  spfs-manager(32518): DEBUG  :             copy 0x6d6000-0x6d7000 to 0x7f3dd9c59000-0x7f3dd9c5a000 (PME_PRESENT)
+Tue Jun 12 2018 00:50:05.443383  spfs-manager(32518): DEBUG  :         remapping 7f3dd9c57000 to 6d4000, size=3000
+Tue Jun 12 2018 00:50:05.443502  spfs-manager(32518): DEBUG  :     /proc/32518/fd/17 --> /proc/32475/cwd
+Tue Jun 12 2018 00:50:05.443637  spfs-manager(32518): DEBUG  :     /proc/32518/fd/16 --> /proc/32475/exe
+Tue Jun 12 2018 00:50:05.444065  spfs-manager(32518): INFO   :     32475 released
+Tue Jun 12 2018 00:50:05.444870  spfs-manager(32517): DEBUG  : child 32518 exited successfully
+Tue Jun 12 2018 00:50:05.444974  spfs-manager(32517): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was thawed
+Tue Jun 12 2018 00:50:05.444987  spfs-manager(32517): DEBUG  : cgroup /sys/fs/cgroup/freezer/spfs_switcher_active was unlocked
+spfs-manager(32496): DEBUG  : 32517 exited, status=0
+Tue Jun 12 2018 00:50:05.451321  spfs-manager(32496): DEBUG  : unreliable_conn_handler: peer was closed
