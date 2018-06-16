@@ -61,14 +61,10 @@ class Manager:
 
         print "SPFS manager socket: " + self.socket_path
 
-        #if os.path.exists( self.socket_path ):
-        #    os.remove( self.socket_path )
-
         pid = os.fork()
         if pid > 0:
             pid, status = os.waitpid(pid, 0)
         else:
-            # shall we use subprocess here?
             os.execvp( self.manager, [
                 "spfs-manager",
                 "-vvvv",
@@ -78,6 +74,7 @@ class Manager:
                 "--log-dir",     self.log_dir, # relative
                 "--exit-with-spfs"
             ] )
+
 
     def __send_premade_request( self, req_type, request ):
         self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_SEQPACKET)

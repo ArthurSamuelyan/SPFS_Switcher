@@ -5,7 +5,7 @@ import manager
 import sys
 import os
 import argparse
-import subprocess # Shall we use it for manager.py too?
+import subprocess
 
 def FreezerPath( freezer_name ):
     return "/sys/fs/cgroup/freezer/" + freezer_name
@@ -86,7 +86,7 @@ def PickRoots( pids ):
     root_pids = []
     rejected_pids = []
     for pid in pids:
-        if CheckRoot( pid ) != 10: # == 0
+        if CheckRoot( pid ) == 0:
             root_pids.append( pid )
         else:
             rejected_pids.append( pid )
