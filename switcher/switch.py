@@ -59,6 +59,17 @@ def FindMountPoint( abs_path ):
         abs_path = os.path.dirname( abs_path )
     return abs_path
 
+def CheckTree( leaf, root ):
+    leaf = os.path.abspath( leaf )
+    root = os.path.abspath( root )
+    while not leaf == "/":
+        if leaf == root:
+            return True
+        leaf = os.path.dirname( leaf )
+    if leaf == root:
+        return True
+    return False
+
 def GetStatusString( pid, str_num ):
     status_file = "/proc/%s/status" % ( pid )
     if os.access( status_file, os.R_OK ):
@@ -82,12 +93,13 @@ def CheckRoot( pid ):
     except OSError: # process does not exist
         return -2
 
-def PickRoots( pids ):
-    root_pids = []
+def PickProcesses( pids, root_required=False ):
+    chosen_pids = []
     rejected_pids = []
     for pid in pids:
-        if CheckRoot( pid ) == 0:
-            root_pids.append( pid )
+        check = CheckRoot( pid )
+        if check == 0 or ( check == -1 and not root_required ):
+            chosen_pids.append( pid )
         else:
             rejected_pids.append( pid )
     # Print rejected PIDs:
@@ -96,7 +108,7 @@ def PickRoots( pids ):
         for r_pid in rejected_pids:
             print( r_pid + " [-]" )
 
-    return root_pids
+    return chosen_pids
 
 
 
@@ -105,6 +117,7 @@ def CreateParser():
     parser.add_argument( '-p', '--pid', nargs='+', required=True )
     parser.add_argument( '-s', '--src', required=True )
     parser.add_argument( '-d', '--dst', required=True )
+    parser.add_argument( '-m', '--mnt', default="" )
     return parser
 
 def main():
@@ -115,6 +128,13 @@ def main():
     if( ( not os.path.isdir( arguments.src ) ) or ( not os.path.isdir( arguments.dst ) ) ):
         print( "Error: --src and --dst values must be directories!" )
         return
+    mntdefined = True
+    if( arguments.mnt == "" ):
+        mntdefined = False
+    elif not os.path.isdir( arguments.mnt ):
+        print( "Warning: --mnt argument is incorrect. Using work-dir/default-spfs-mnt instead." )
+        mntdefined = False
+
 
     # We'll need two cgroups: spfs_switcher_active and spfs_switcher_retired
     # We'll give spfs_switcher_active controls to spfs-manager and it may freeze or unfreeze this cgroup
@@ -133,15 +153,23 @@ def main():
         print( "Error: --src and --dst directories must be on different mount points!" )
         return
 
+    if mntdefined:
+        if CheckTree( leaf=abs_src, root=arguments.mnt ) or CheckTree( leaf=abs_dst, root=arguments.mnt ):
+            print( "Warning: --mnt directory should not contain --src or --dst. Using work-dir/default-spfs-mnt instead." )
+            mntdefined = False
+
     # Launching and preparing spfs-manager:
     mngr = manager.Manager( "./control.sock" )    # Shall we allow user to specify control socket location?
-
+    if mntdefined:
+        spfs_mnt = os.path.abspath( arguments.mnt )
+    else:
+        spfs_mnt = mngr.d_spfs_mnt
     # Mounting spfs into mnt_spfs on src directory:
-    if mngr.mount( id=0, mountpoint=mngr.spfs_mnt, mode="proxy", proxy_dir=abs_src ) != 0:
+    if mngr.mount( id=0, mountpoint=spfs_mnt, mode="proxy", proxy_dir=abs_src ) != 0:
         print "Failed to mount SPFS!"
         return
     # Creating spfs_switcher_active freezer cgroup and filling with given processes: 
-    if PutProcessesIntoFreezer( PickRoots( arguments.pid ), freezer_name_a ) != 0:
+    if PutProcessesIntoFreezer( PickProcesses( arguments.pid, root_required=(not mntdefined) ), freezer_name_a ) != 0:
         print "Nothing to switch!"
         return
     # Preliminary data syncing between src and dst (in order to speed up main data syncing): 
@@ -151,7 +179,7 @@ def main():
 
     # === Switch: ===
     # 1: Switching processes src -> spfs-mnt:
-    if mngr.switch( source=abs_src, target=mngr.spfs_mnt, freeze_cgroup=FreezerPath( freezer_name_a ) ) != 0:
+    if mngr.switch( source=abs_src, target=spfs_mnt, freeze_cgroup=FreezerPath( freezer_name_a ) ) != 0:
 	mngr.rollback()
         print "Switch aborted!"
         return
@@ -173,7 +201,7 @@ def main():
 
 
     # 3: Switching processes spfs-mnt -> dst:
-    if mngr.switch( source=mngr.spfs_mnt, target=abs_dst, freeze_cgroup=FreezerPath( freezer_name_a ) ) != 0:
+    if mngr.switch( source=spfs_mnt, target=abs_dst, freeze_cgroup=FreezerPath( freezer_name_a ) ) != 0:
 	mngr.rollback()
         print "Switch aborted!"
         return

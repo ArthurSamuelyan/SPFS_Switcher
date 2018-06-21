@@ -36,7 +36,7 @@ class Manager:
         self.manager  = "spfs-manager"
         self.swd = os.path.join( os.getcwd(), "work-dir" ) # SWD = Switcher Work Directory
         self.work_dir = os.path.join( self.swd, "manager-work-dir" )
-        self.spfs_mnt = os.path.join( self.swd, "spfs-mnt" )
+        self.d_spfs_mnt = os.path.join( self.swd, "default-spfs-mnt" )
         self.log_dir  = "log-dir"
         self.socket_file = "control.sock"
         self.socket_path = os.path.join( self.work_dir, self.socket_file )
@@ -55,8 +55,8 @@ class Manager:
         os.mkdir( self.work_dir, 0755 )
         self.work_dir = os.path.abspath( self.work_dir )
 
-        os.mkdir( self.spfs_mnt, 0755 )
-        self.spfs_mnt = os.path.abspath( self.spfs_mnt )
+        os.mkdir( self.d_spfs_mnt, 0755 )
+        self.d_spfs_mnt = os.path.abspath( self.d_spfs_mnt )
         # ===================
 
         print "SPFS manager socket: " + self.socket_path
